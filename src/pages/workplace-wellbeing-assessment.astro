@@ -1,0 +1,329 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/sections/Header.astro';
+import Footer from '../components/sections/Footer.astro';
+import ContactForm from '../components/sections/ContactForm.astro';
+
+const title = 'Workplace Wellbeing Assessment - Comprehensive Employee Wellness Analysis';
+const description = 'Professional workplace wellbeing assessment services to measure and improve employee wellness, engagement, and productivity. Get data-driven insights with our comprehensive assessment framework.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20 overflow-hidden">
+      <div class="absolute inset-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20"></div>
+      </div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Workplace Wellbeing Assessment
+          </h1>
+          <p class="text-xl md:text-2xl text-gray-300 mb-8">
+            Comprehensive analysis of your organizational health using AI-powered insights and expert evaluation
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#assessment-process" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+              Learn About Our Process
+            </a>
+            <a href="#contact" class="inline-block bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors">
+              Book Free Consultation
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What is a Workplace Wellbeing Assessment -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            What is a Workplace Wellbeing Assessment?
+          </h2>
+          <div class="prose prose-lg max-w-none text-gray-600">
+            <p class="mb-4">
+              A workplace wellbeing assessment is a systematic evaluation of your organization's employee wellness ecosystem. It goes beyond traditional employee surveys to provide a comprehensive understanding of the factors affecting your team's mental health, engagement, productivity, and overall satisfaction.
+            </p>
+            <p class="mb-4">
+              Our assessment methodology combines advanced AI analytics with human expertise to uncover patterns and insights that traditional methods often miss. We examine multiple dimensions of workplace wellbeing, from individual mental health support to organizational culture and leadership effectiveness.
+            </p>
+            <p>
+              The result is a clear, actionable roadmap that helps you create a healthier, more productive workplace where employees thrive and business objectives are met.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Areas We Assess -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+            Key Areas We Assess
+          </h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Mental Health & Stress</h3>
+              <p class="text-gray-600">Evaluate stress levels, burnout risk, and mental health support systems within your organization.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Employee Engagement</h3>
+              <p class="text-gray-600">Measure engagement levels, motivation factors, and connection to organizational purpose.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Work-Life Balance</h3>
+              <p class="text-gray-600">Assess workload distribution, flexibility options, and support for personal wellbeing.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Leadership & Management</h3>
+              <p class="text-gray-600">Evaluate leadership effectiveness, communication quality, and management support structures.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Organizational Culture</h3>
+              <p class="text-gray-600">Analyze cultural health, values alignment, and psychological safety within teams.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Physical Environment</h3>
+              <p class="text-gray-600">Review workspace design, ergonomics, and environmental factors affecting wellbeing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Assessment Process -->
+    <section id="assessment-process" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+            Our Assessment Process
+          </h2>
+          <div class="space-y-8">
+            <div class="flex flex-col md:flex-row gap-6 items-start">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                  1
+                </div>
+              </div>
+              <div class="flex-grow">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Initial Consultation</h3>
+                <p class="text-gray-600">We begin with a comprehensive consultation to understand your organization's unique context, challenges, and objectives. This helps us tailor our assessment to your specific needs.</p>
+              </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-6 items-start">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                  2
+                </div>
+              </div>
+              <div class="flex-grow">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Data Collection</h3>
+                <p class="text-gray-600">Using scientifically validated surveys, interviews, and our AI-powered analytics platform, we gather comprehensive data about your workplace wellbeing across multiple dimensions.</p>
+              </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-6 items-start">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                  3
+                </div>
+              </div>
+              <div class="flex-grow">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">AI-Powered Analysis</h3>
+                <p class="text-gray-600">Our advanced AI algorithms identify patterns, correlations, and insights that traditional methods might miss, providing a deeper understanding of your organizational wellbeing.</p>
+              </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-6 items-start">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                  4
+                </div>
+              </div>
+              <div class="flex-grow">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Expert Review</h3>
+                <p class="text-gray-600">Craig Fearn personally reviews all findings, applying his extensive HR expertise to interpret the data and develop practical, actionable recommendations.</p>
+              </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-6 items-start">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                  5
+                </div>
+              </div>
+              <div class="flex-grow">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Comprehensive Report & Action Plan</h3>
+                <p class="text-gray-600">You receive a detailed report with clear insights, benchmarks, and a prioritized action plan to improve workplace wellbeing and drive measurable business outcomes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+            Benefits of Our Wellbeing Assessment
+          </h2>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="space-y-4">
+              <div class="flex items-start gap-4">
+                <svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-1">Reduce Absenteeism</h3>
+                  <p class="text-gray-600">Identify and address the root causes of absence, typically reducing sick days by 20-30%.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-1">Boost Productivity</h3>
+                  <p class="text-gray-600">Engaged, healthy employees are up to 40% more productive than their stressed counterparts.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-1">Improve Retention</h3>
+                  <p class="text-gray-600">Create a workplace where people want to stay, reducing turnover costs significantly.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-1">Enhance Innovation</h3>
+                  <p class="text-gray-600">Psychologically safe teams are more creative and innovative in problem-solving.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="space-y-4">
+              <div class="flex items-start gap-4">
+                <svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-1">Data-Driven Decisions</h3>
+                  <p class="text-gray-600">Make informed decisions based on comprehensive data rather than assumptions.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-1">Legal Compliance</h3>
+                  <p class="text-gray-600">Ensure compliance with workplace health and safety regulations and duty of care.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-1">Attract Top Talent</h3>
+                  <p class="text-gray-600">Become an employer of choice by demonstrating commitment to employee wellbeing.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-1">ROI Transparency</h3>
+                  <p class="text-gray-600">Track and measure the return on your wellbeing investments with clear metrics.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-600 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Transform Your Workplace Wellbeing?
+          </h2>
+          <p class="text-xl mb-8">
+            Get started with a free consultation to discuss how our workplace wellbeing assessment can benefit your organization.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#contact" class="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              Book Free Consultation
+            </a>
+            <a href="/wellbeing-audit-process" class="inline-block bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+              Learn More About Our Process
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <div id="contact">
+      <ContactForm />
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

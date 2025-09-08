@@ -1,0 +1,284 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/sections/Header.astro';
+import Footer from '../components/sections/Footer.astro';
+
+const title = 'About Craig Fearn - Workplace Wellbeing Expert';
+const description = 'Meet Craig Fearn, Fellow of the Royal Society for Public Health, IoD Ambassador, and founder of Lighthouse Mentoring with 25+ years transforming workplace cultures.';
+
+const credentials = [
+  { title: 'Fellow', org: 'Royal Society for Public Health', year: '2024' },
+  { title: 'Principal Practitioner', org: 'Association of Business Psychology', year: '2019' },
+  { title: 'Senior Member', org: 'European Mentoring & Coaching Council', year: '2009' },
+  { title: 'Ambassador', org: 'Institute of Directors', year: 'Current' }
+];
+
+const awards = [
+  { title: 'Aspiring Director Finalist', org: 'Institute of Directors', year: '2025' },
+  { title: 'Global Director Finalist', org: 'Institute of Directors', year: '2025' }
+];
+
+const expertise = [
+  'Executive Coaching & Mentoring',
+  'Workplace Wellbeing Audits',
+  'ISO 45003 Implementation',
+  'Mental Health First Aid',
+  'Stress & Burnout Prevention',
+  'Leadership Development',
+  'Organizational Psychology',
+  'Change Management'
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="section relative overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="/human-ai-handshake.png" 
+          alt="" 
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-50/80 to-white/70"></div>
+      </div>
+      <div class="container relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 class="text-gray-900 mb-6">
+              Meet Craig Fearn
+              <span class="block text-gradient text-3xl md:text-4xl lg:text-5xl mt-4">
+                Illuminating the Path to Workplace Wellbeing Excellence
+              </span>
+            </h1>
+            <p class="text-xl text-gray-600 mb-6">
+              With over 17 years of experience transforming workplace cultures, 
+              Craig brings a unique blend of psychological expertise, business acumen, 
+              and genuine passion for human wellbeing to every organization he works with.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a href="#assessment" class="btn-primary">
+                Work With Craig
+              </a>
+              <a href="https://www.linkedin.com/in/craigfearn/" target="_blank" rel="noopener" class="btn-outline">
+                Connect on LinkedIn
+              </a>
+            </div>
+          </div>
+          <div class="relative">
+            <img 
+              src="/craig-fearn.jpg" 
+              alt="Craig Fearn" 
+              class="rounded-2xl shadow-2xl w-full object-cover"
+            />
+            <div class="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-lg p-4">
+              <p class="text-2xl font-bold text-primary-600">17+</p>
+              <p class="text-sm text-gray-600">Years Experience</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Credentials Section -->
+    <section class="section bg-white">
+      <div class="container">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-gray-900 text-center mb-8">
+            Professional Excellence & Recognition
+          </h2>
+          
+          <!-- Badge Display -->
+          <div class="grid grid-cols-2 gap-6 mb-12">
+            <!-- Professional Badges Row -->
+            <div class="flex justify-center gap-8 col-span-2">
+              <div class="text-center">
+                <img src="/iod-badge.png" alt="IoD Ambassador" class="h-20 w-auto mx-auto mb-2" />
+                <p class="text-sm font-semibold text-gray-900">IoD Ambassador</p>
+              </div>
+              <div class="text-center">
+                <img src="/rsph-badge.jpg" alt="RSPH Fellow" class="h-20 w-auto mx-auto mb-2" />
+                <p class="text-sm font-semibold text-gray-900">Fellow RSPH</p>
+              </div>
+            </div>
+            <!-- Award Banners -->
+            <div class="text-center">
+              <img src="/iod-global-finalist.png" alt="IoD Global Director Finalist" class="w-full max-w-xs mx-auto h-auto mb-2" style="object-fit: contain;" />
+              <p class="text-sm font-semibold text-gray-900">Global Director Finalist 2025</p>
+            </div>
+            <div class="text-center">
+              <img src="/iod-aspiring-finalist.png" alt="IoD Aspiring Director Finalist" class="w-full max-w-xs mx-auto h-auto mb-2" style="object-fit: contain;" />
+              <p class="text-sm font-semibold text-gray-900">Aspiring Director Finalist 2025</p>
+            </div>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">Fellowships & Memberships</h3>
+              <ul class="space-y-3">
+                {credentials.map((cred) => (
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                    <div>
+                      <p class="font-medium text-gray-900">{cred.title}</p>
+                      <p class="text-sm text-gray-600">{cred.org} • {cred.year}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">Recent Awards</h3>
+              <ul class="space-y-3">
+                {awards.map((award) => (
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-secondary-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M5 2a2 2 0 00-2 2v14l3.5-2 3.5 2 3.5-2 3.5 2V4a2 2 0 00-2-2H5zm4.707 3.707a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L8.414 9H10a3 3 0 013 3v1a1 1 0 102 0v-1a5 5 0 00-5-5H8.414l1.293-1.293z" clip-rule="evenodd"></path>
+                    </svg>
+                    <div>
+                      <p class="font-medium text-gray-900">{award.title}</p>
+                      <p class="text-sm text-gray-600">{award.org} • {award.year}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <p class="text-sm text-gray-600 mt-4 italic">
+                "Recognising exceptional innovation, leadership, and vision in driving businesses internationally"
+              </p>
+            </div>
+          </div>
+          
+          <div class="bg-primary-50 rounded-2xl p-8">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">Areas of Expertise</h3>
+            <div class="grid md:grid-cols-2 gap-3">
+              {expertise.map((item) => (
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-primary-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="section bg-gray-50">
+      <div class="container">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-gray-900 text-center mb-12">
+            My Approach to Workplace Wellbeing
+          </h2>
+          
+          <div class="prose prose-lg mx-auto text-gray-600">
+            <p class="lead">
+              I believe that workplace wellbeing isn't just about reducing sick days or 
+              improving productivity metrics—it's about creating environments where people 
+              can bring their whole selves to work and thrive.
+            </p>
+            
+            <p>
+              After 17 years working with organizations across every sector, I've seen 
+              firsthand how the right wellbeing strategy can transform not just individual 
+              lives, but entire company cultures. My approach combines cutting-edge 
+              psychological research with practical, implementable solutions that work 
+              in the real world.
+            </p>
+            
+            <p>
+              As someone who has navigated the challenges of leadership myself, I understand 
+              the pressures that executives and HR leaders face. That's why I focus on 
+              delivering solutions that are both compassionate and commercially viable—
+              because wellbeing initiatives that don't deliver ROI simply don't survive.
+            </p>
+            
+            <blockquote class="border-l-4 border-primary-500 pl-4 italic my-8">
+              "What truly sets Craig apart is his extensive knowledge, continued deep empathy 
+              and openness to speak from personal experience. His expertise in mental health 
+              support is unrivalled."
+              <cite class="block mt-2 text-sm not-italic">— Richard Sharpe, Director</cite>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section bg-white">
+      <div class="container">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-gray-900 text-center mb-12">
+            What Leaders Say
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="card">
+              <div class="flex gap-1 mb-4">
+                {[1,2,3,4,5].map(() => (
+                  <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                  </svg>
+                ))}
+              </div>
+              <p class="text-gray-600 mb-4">
+                "Craig's professional focus on wellbeing leadership has been evident to all 
+                attending—not with a salesman's pitch, but through his natural affinity for 
+                the subject within his daily approach to all his activities."
+              </p>
+              <p class="font-semibold text-gray-900">Chris Saxby</p>
+              <p class="text-sm text-gray-600">IoD Cornwall Chair</p>
+            </div>
+            
+            <div class="card">
+              <div class="flex gap-1 mb-4">
+                {[1,2,3,4,5].map(() => (
+                  <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                  </svg>
+                ))}
+              </div>
+              <p class="text-gray-600 mb-4">
+                "In a fragmented field where experience, skills and qualifications vary, 
+                Craig stands out as a highly skilled and dedicated Wellbeing practitioner."
+              </p>
+              <p class="font-semibold text-gray-900">Richard Sharpe</p>
+              <p class="text-sm text-gray-600">Executive Director</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="assessment" class="section bg-gradient-to-br from-primary-50 to-secondary-50">
+      <div class="container">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-gray-900 mb-6">
+            Ready to Transform Your Workplace?
+          </h2>
+          <p class="text-xl text-gray-600 mb-8">
+            Let's discuss how we can work together to create a thriving culture 
+            where your people and business flourish.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/#assessment" class="btn-primary">
+              Get Your Free Assessment
+            </a>
+            <a href="mailto:craig.fearn@lighthousementoring.co.uk" class="btn-outline">
+              Email Craig Directly
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

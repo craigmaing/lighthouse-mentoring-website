@@ -1,0 +1,176 @@
+---
+const features = [
+  {
+    title: 'Uncover Hidden Costs',
+    description: 'Through employee interviews and assessment tools, identify how much presenteeism, stress, and disengagement are really costing your business.',
+    icon: 'chart',
+    color: 'primary',
+    highlight: 'Find the gaps'
+  },
+  {
+    title: '£4.70 Return Per £1',
+    description: 'Proven ROI through reduced sick days (down 27%), lower recruitment costs, and increased productivity - backed by Deloitte research.¹',
+    icon: 'trending',
+    color: 'secondary',
+    highlight: '470% ROI'
+  },
+  {
+    title: 'SME-Specific Solutions',
+    description: 'No corporate fluff - just practical, affordable actions that work with teams of 10-250. Implementation that fits around your business.',
+    icon: 'target',
+    color: 'primary',
+    highlight: 'Built for SMEs'
+  },
+  {
+    title: 'Expert Analysis',
+    description: 'Craig personally reviews all assessments, applying 17+ years of experience to identify patterns and provide insights tailored to your specific situation.',
+    icon: 'shield',
+    color: 'secondary',
+    highlight: 'Personal touch'
+  },
+  {
+    title: 'Results in 30 Days',
+    description: 'Quick wins in month one, measurable improvements by month three. No lengthy implementations - start seeing change immediately.',
+    icon: 'clock',
+    color: 'primary',
+    highlight: 'Fast impact'
+  },
+  {
+    title: 'Clear Roadmap',
+    description: 'Detailed report with prioritized recommendations you can implement. We show you exactly what needs attention and in what order.',
+    icon: 'users',
+    color: 'secondary',
+    highlight: 'Take action'
+  }
+];
+
+const getIcon = (type: string) => {
+  const icons: Record<string, string> = {
+    chart: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
+    trending: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6',
+    target: 'M9 11l3 3L22 4M16 3a9 9 0 11-6.17 15.61L3 21l2.39-6.83A9 9 0 0116 3z',
+    shield: 'M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01',
+    clock: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
+    users: 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z'
+  };
+  return icons[type] || icons.chart;
+};
+---
+
+<section class="section bg-white">
+  <div class="container">
+    <div class="text-center max-w-4xl mx-auto mb-12">
+      <h2 class="text-gray-900 mb-6">
+        The SME Advantage: 
+        <span class="text-gradient">Right-Sized Wellbeing Solutions</span>
+      </h2>
+      <p class="text-xl text-gray-700 font-medium mb-4">
+        Big business wellbeing strategies don't work for SMEs. You need solutions that fit your budget, 
+        culture, and growth stage.
+      </p>
+      <p class="text-lg text-gray-600">
+        Our approach combines proven assessment methods with deep human expertise to deliver practical, 
+        affordable wellbeing improvements that actually work for smaller teams.
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {features.map((feature, index) => (
+        <div class="card group hover:scale-105 transition-transform duration-300 relative">
+          {feature.highlight && (
+            <span class={`absolute -top-3 right-4 px-3 py-1 text-xs font-bold rounded-full ${
+              feature.color === 'primary' 
+                ? 'bg-primary-600 text-white' 
+                : 'bg-secondary-600 text-white'
+            }`}>
+              {feature.highlight}
+            </span>
+          )}
+          
+          <div class={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${
+            feature.color === 'primary' ? 'bg-primary-100' : 'bg-secondary-100'
+          }`}>
+            <svg 
+              class={`w-6 h-6 ${
+                feature.color === 'primary' ? 'text-primary-600' : 'text-secondary-600'
+              }`} 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d={getIcon(feature.icon)}
+              />
+            </svg>
+          </div>
+          
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">
+            {feature.title}
+          </h3>
+          
+          <p class="text-gray-600 text-sm">
+            {feature.description}
+          </p>
+        </div>
+      ))}
+    </div>
+    
+    <!-- Wellbeing Metrics Visualization -->
+    <div class="mt-16 mb-12">
+      <div class="max-w-5xl mx-auto">
+        <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">
+          Comprehensive Wellbeing Analysis Across All Key Metrics
+        </h3>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img 
+            src="/wellbeing-metrics-visualization.png" 
+            alt="Wellbeing metrics including Heart Rate, Sleep Quality, Mindfulness, Stress Levels, and Social Connection" 
+            class="w-full h-auto"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <p class="text-lg font-medium mb-2">Pattern Recognition That Drives Results</p>
+            <p class="text-sm opacity-90">
+              Our <a href="/employee-wellness-audit" class="underline hover:no-underline">comprehensive wellness audits</a> analyze multiple wellbeing dimensions to identify 
+              patterns that traditional surveys miss. From sleep quality to social connections, 
+              we help you understand the complete picture of your workplace health.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-12 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 md:p-12">
+      <div class="text-center">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          Stop Losing Money to Poor Wellbeing
+        </h3>
+        <p class="text-lg text-gray-700 font-medium mb-4 max-w-2xl mx-auto">
+          The average SME loses £62,000 per year to wellbeing issues.
+        </p>
+        <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+          Find out what it's costing you with our free assessment. No obligations, 
+          just insights you can action immediately.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#assessment" class="btn-primary">
+            Get My Free Assessment
+          </a>
+          <a href="/workplace-wellbeing-assessment" class="btn-outline">
+            Learn About Our Process
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Citations -->
+    <div class="mt-8 pt-8 border-t border-gray-200">
+      <p class="text-xs text-gray-500 text-center">
+        ¹ Deloitte UK (2024): "Mental health and employers" - Employers receive £4.70 for every £1 invested in workplace mental health initiatives.
+      </p>
+    </div>
+  </div>
+</section>

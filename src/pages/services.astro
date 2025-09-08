@@ -1,0 +1,350 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/sections/Header.astro';
+import Footer from '../components/sections/Footer.astro';
+
+const title = 'Wellbeing Audit Services';
+const description = 'Comprehensive workplace wellbeing assessment services for SMEs. Data-driven insights, expert analysis, and actionable improvement plans.';
+
+const services = [
+  {
+    title: 'Comprehensive Wellbeing Audit',
+    price: 'Pricing by team size',
+    description: 'Full organizational assessment covering all aspects of workplace wellbeing',
+    features: [
+      'Employee survey and data collection',
+      'Leadership interviews for context',
+      'Culture and environment assessment',
+      'Stress and mental health analysis',
+      'Work-life balance evaluation',
+      'Detailed report with benchmarking',
+      'Prioritized recommendations',
+      'Executive presentation of findings'
+    ],
+    pricing: [
+      '10-25 employees: £2,500',
+      '26-50 employees: £3,500',
+      '51-100 employees: £5,000',
+      '100+ employees: Custom quote'
+    ]
+  },
+  {
+    title: 'Quick Pulse Check',
+    price: 'Pricing by team size',
+    description: 'Rapid assessment for immediate insights into team wellbeing',
+    features: [
+      'Online employee survey',
+      'Key metrics analysis',
+      'Top 3 priority areas identified',
+      'Summary report with insights',
+      '30-minute findings review call'
+    ],
+    pricing: [
+      '10-25 employees: £750',
+      '26-50 employees: £1,250',
+      '51-100 employees: £1,750',
+      '100+ employees: Custom quote'
+    ]
+  },
+  {
+    title: 'Quarterly Assessment Package',
+    price: 'Annual pricing by size',
+    description: 'Regular wellbeing assessments to track progress over time',
+    features: [
+      'Quarterly employee surveys',
+      'Trend analysis and tracking',
+      'Benchmark comparisons',
+      'Progress reports each quarter',
+      'Year-on-year comparisons',
+      'Executive summary presentations'
+    ],
+    pricing: [
+      '10-25 employees: £6,000/year',
+      '26-50 employees: £10,000/year',
+      '51-100 employees: £16,000/year',
+      '100+ employees: Custom quote'
+    ]
+  }
+];
+
+const process = [
+  {
+    step: '1',
+    title: 'Discovery Call',
+    description: 'We discuss your specific challenges and objectives to tailor our assessment approach.'
+  },
+  {
+    step: '2',
+    title: 'Data Collection',
+    description: 'Anonymous surveys and assessments gather comprehensive insights from your entire team.'
+  },
+  {
+    step: '3',
+    title: 'Expert Analysis',
+    description: 'Craig personally reviews all data to identify patterns and opportunities using his 17+ years of expertise.'
+  },
+  {
+    step: '4',
+    title: 'Comprehensive Report',
+    description: 'Receive detailed findings with clear insights, benchmarking, and prioritized recommendations you can implement.'
+  }
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="section relative overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="/human-ai-analysis.png" 
+          alt="" 
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-50/80 to-white/70"></div>
+      </div>
+      <div class="container relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-gray-900 mb-6">
+            Wellbeing Audit Services
+            <span class="block text-gradient">That Drive Real Change</span>
+          </h1>
+          <p class="text-xl text-gray-600 mb-8">
+            Transform your workplace with our comprehensive wellbeing assessments. 
+            Get the insights you need to create a thriving, productive culture.
+          </p>
+          <a href="#assessment" class="btn-primary">
+            Start Your Assessment
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="section bg-white">
+      <div class="container">
+        <div class="text-center mb-12">
+          <h2 class="text-gray-900 mb-4">Choose Your Wellbeing Solution</h2>
+          <p class="text-lg text-gray-600">
+            Flexible packages designed for SMEs at every stage of their wellbeing journey
+          </p>
+        </div>
+        
+        <div class="grid lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <div class={`card relative ${index === 0 ? 'border-2 border-primary-500' : ''}`}>
+              {index === 0 && (
+                <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  Most Popular
+                </span>
+              )}
+              <h3 class="text-2xl font-semibold text-gray-900 mb-2">{service.title}</h3>
+              <p class="text-lg font-semibold text-primary-600 mb-2">{service.price}</p>
+              <p class="text-gray-600 mb-4">{service.description}</p>
+              
+              {/* Pricing Tiers */}
+              {service.pricing && (
+                <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                  <p class="text-sm font-semibold text-gray-700 mb-2">Pricing:</p>
+                  <ul class="space-y-1">
+                    {service.pricing.map((tier) => (
+                      <li class="text-sm text-gray-600">{tier}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              
+              <ul class="space-y-3 mb-8">
+                {service.features.map((feature) => (
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span class="text-gray-600">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <a href="#assessment" class={index === 0 ? 'btn-primary w-full text-center' : 'btn-outline w-full text-center'}>
+                Get Started
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section bg-gray-50">
+      <div class="container">
+        <div class="text-center mb-12">
+          <h2 class="text-gray-900 mb-4">How Our Audit Process Works</h2>
+          <p class="text-lg text-gray-600">
+            A proven methodology that delivers actionable insights
+          </p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+          {process.map((item, index) => (
+            <div class="flex gap-6 mb-8 last:mb-0">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold">
+                  {item.step}
+                </div>
+              </div>
+              <div class="flex-grow">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">{item.title}</h3>
+                <p class="text-gray-600">{item.description}</p>
+                {index < process.length - 1 && (
+                  <div class="w-0.5 h-8 bg-gray-300 ml-6 mt-4"></div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ROI Section -->
+    <section class="section bg-white">
+      <div class="container">
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 md:p-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">
+              The ROI of Workplace Wellbeing
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+              <div class="text-center">
+                <p class="text-4xl font-bold text-primary-600 mb-2">£4.70</p>
+                <p class="text-gray-600">Return for every £1 invested¹</p>
+              </div>
+              <div class="text-center">
+                <p class="text-4xl font-bold text-primary-600 mb-2">51bn</p>
+                <p class="text-gray-600">Cost of poor mental health to UK employers²</p>
+              </div>
+              <div class="text-center">
+                <p class="text-4xl font-bold text-primary-600 mb-2">64%</p>
+                <p class="text-gray-600">Employees prioritize mental health support³</p>
+              </div>
+            </div>
+            <p class="text-center text-gray-600 mb-6">
+              Join forward-thinking SMEs who are seeing real returns from investing in their people's wellbeing.
+            </p>
+            <div class="text-xs text-gray-500 text-center mb-6">
+              <p>¹ Deloitte UK (2024) | ² Deloitte UK Mental Health Report (2024) | ³ CIPD Health & Wellbeing Survey (2023)</p>
+            </div>
+            <div class="text-center">
+              <a href="#assessment" class="btn-primary">
+                Calculate Your Potential ROI
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="assessment" class="section bg-gradient-to-br from-primary-50 to-secondary-50">
+      <div class="container">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-gray-900 mb-4">
+              Ready to Transform Your Workplace?
+            </h2>
+            <p class="text-lg text-gray-600">
+              Get started with a free consultation to discuss your wellbeing objectives
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-2xl shadow-xl p-8">
+            <form id="service-form" class="space-y-6">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+                    Your Name *
+                  </label>
+                  <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  />
+                </div>
+                
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                    Email Address *
+                  </label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  />
+                </div>
+              </div>
+              
+              <div>
+                <label for="service" class="block text-sm font-medium text-gray-700 mb-2">
+                  Service Interest *
+                </label>
+                <select 
+                  id="service" 
+                  name="service" 
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                >
+                  <option value="">Select a service</option>
+                  <option value="comprehensive">Comprehensive Wellbeing Audit</option>
+                  <option value="pulse">Quick Pulse Check</option>
+                  <option value="quarterly">Quarterly Assessment Package</option>
+                  <option value="consultation">Just a Consultation</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                  Tell us about your needs
+                </label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  rows="4"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  placeholder="Share any specific challenges or goals..."
+                ></textarea>
+              </div>
+              
+              <button 
+                type="submit" 
+                class="w-full btn-primary text-center"
+              >
+                Request Consultation
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('service-form') as HTMLFormElement;
+  
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+    
+    console.log('Service inquiry:', data);
+    
+    alert('Thank you for your interest! Craig will be in touch soon to discuss your wellbeing needs.');
+    form.reset();
+  });
+</script>

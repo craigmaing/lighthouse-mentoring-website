@@ -1,0 +1,466 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/sections/Header.astro';
+import Footer from '../components/sections/Footer.astro';
+import ContactForm from '../components/sections/ContactForm.astro';
+
+const title = 'How Our Wellbeing Audit Process Works - Step-by-Step Guide';
+const description = 'Discover our comprehensive wellbeing audit process. From initial consultation to actionable insights, learn how we help organizations improve employee wellness with data-driven strategies.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20 overflow-hidden">
+      <div class="absolute inset-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20"></div>
+      </div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Our Wellbeing Audit Process
+          </h1>
+          <p class="text-xl md:text-2xl text-gray-300 mb-8">
+            A proven 5-step methodology that delivers actionable insights and measurable improvements
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#process-steps" class="inline-block bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+              View Process Steps
+            </a>
+            <a href="#contact" class="inline-block bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors">
+              Start Your Audit
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Overview -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            A Structured Approach to Workplace Wellbeing
+          </h2>
+          <div class="prose prose-lg max-w-none text-gray-600">
+            <p class="mb-4">
+              Our wellbeing audit process has been refined through years of experience working with organizations across various industries. We've developed a systematic approach that ensures comprehensive coverage while remaining flexible enough to address your unique challenges.
+            </p>
+            <p class="mb-4">
+              What sets our process apart is the combination of AI-powered analytics with human expertise. This dual approach allows us to process vast amounts of data quickly while maintaining the nuanced understanding that only comes from years of HR experience.
+            </p>
+            <p>
+              Every step of our process is designed to maximize value while minimizing disruption to your operations. We work closely with your team to ensure smooth implementation and meaningful results.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Process Steps -->
+    <section id="process-steps" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+            The 5-Step Wellbeing Audit Process
+          </h2>
+          
+          <!-- Step 1 -->
+          <div class="mb-16">
+            <div class="flex flex-col lg:flex-row gap-8 items-center">
+              <div class="lg:w-1/2">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="w-16 h-16 bg-purple-600 text-white rounded-full flex items-center justify-center text-2xl font-bold">
+                    1
+                  </div>
+                  <h3 class="text-2xl font-bold text-gray-900">Discovery & Consultation</h3>
+                </div>
+                <p class="text-gray-600 mb-4">
+                  We begin with an in-depth consultation to understand your organization's unique context, challenges, and objectives. This initial phase is crucial for tailoring our approach to your specific needs.
+                </p>
+                <ul class="space-y-2">
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Stakeholder interviews</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Current state assessment</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Goal setting and success metrics</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Audit scope definition</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="lg:w-1/2">
+                <div class="bg-purple-100 rounded-lg p-6">
+                  <h4 class="font-semibold text-gray-900 mb-3">Duration: 2-3 Days</h4>
+                  <p class="text-gray-600 text-sm mb-3">
+                    This phase includes virtual or in-person meetings with key stakeholders to ensure we have a complete understanding of your organization.
+                  </p>
+                  <div class="bg-white rounded p-4">
+                    <p class="text-sm font-semibold text-gray-900 mb-2">Key Deliverable:</p>
+                    <p class="text-sm text-gray-600">Customized audit plan aligned with your objectives</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Step 2 -->
+          <div class="mb-16">
+            <div class="flex flex-col lg:flex-row-reverse gap-8 items-center">
+              <div class="lg:w-1/2">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold">
+                    2
+                  </div>
+                  <h3 class="text-2xl font-bold text-gray-900">Data Collection</h3>
+                </div>
+                <p class="text-gray-600 mb-4">
+                  We deploy our comprehensive data collection tools, including anonymous surveys, focus groups, and organizational metrics analysis to gather a complete picture of workplace wellbeing.
+                </p>
+                <ul class="space-y-2">
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Employee wellbeing surveys</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Manager assessment interviews</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="text-gray-600">HR metrics analysis</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Environmental assessment</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="lg:w-1/2">
+                <div class="bg-blue-100 rounded-lg p-6">
+                  <h4 class="font-semibold text-gray-900 mb-3">Duration: 5-7 Days</h4>
+                  <p class="text-gray-600 text-sm mb-3">
+                    Data collection is designed to be minimally disruptive, with most activities completed online or during regular work hours.
+                  </p>
+                  <div class="bg-white rounded p-4">
+                    <p class="text-sm font-semibold text-gray-900 mb-2">Typical Response Rate:</p>
+                    <p class="text-sm text-gray-600">95%+ employee participation</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Step 3 -->
+          <div class="mb-16">
+            <div class="flex flex-col lg:flex-row gap-8 items-center">
+              <div class="lg:w-1/2">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="w-16 h-16 bg-green-600 text-white rounded-full flex items-center justify-center text-2xl font-bold">
+                    3
+                  </div>
+                  <h3 class="text-2xl font-bold text-gray-900">AI-Powered Analysis</h3>
+                </div>
+                <p class="text-gray-600 mb-4">
+                  Our advanced AI algorithms process the collected data to identify patterns, correlations, and insights that traditional analysis methods might miss.
+                </p>
+                <ul class="space-y-2">
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Pattern recognition analysis</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Predictive risk modeling</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Sentiment analysis</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Benchmark comparisons</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="lg:w-1/2">
+                <div class="bg-green-100 rounded-lg p-6">
+                  <h4 class="font-semibold text-gray-900 mb-3">Duration: 3-4 Days</h4>
+                  <p class="text-gray-600 text-sm mb-3">
+                    AI analysis processes thousands of data points to uncover hidden insights and provide comprehensive understanding.
+                  </p>
+                  <div class="bg-white rounded p-4">
+                    <p class="text-sm font-semibold text-gray-900 mb-2">Analysis Depth:</p>
+                    <p class="text-sm text-gray-600">10,000+ data points analyzed per organization</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Step 4 -->
+          <div class="mb-16">
+            <div class="flex flex-col lg:flex-row-reverse gap-8 items-center">
+              <div class="lg:w-1/2">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="w-16 h-16 bg-yellow-600 text-white rounded-full flex items-center justify-center text-2xl font-bold">
+                    4
+                  </div>
+                  <h3 class="text-2xl font-bold text-gray-900">Expert Review & Insights</h3>
+                </div>
+                <p class="text-gray-600 mb-4">
+                  Craig Fearn personally reviews all AI findings, applying decades of HR expertise to interpret the data and develop practical, actionable recommendations.
+                </p>
+                <ul class="space-y-2">
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Human validation of AI insights</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Context-specific recommendations</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Priority action planning</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="text-gray-600">ROI projections</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="lg:w-1/2">
+                <div class="bg-yellow-100 rounded-lg p-6">
+                  <h4 class="font-semibold text-gray-900 mb-3">Duration: 2-3 Days</h4>
+                  <p class="text-gray-600 text-sm mb-3">
+                    Expert review ensures that recommendations are practical, achievable, and aligned with your organizational culture.
+                  </p>
+                  <div class="bg-white rounded p-4">
+                    <p class="text-sm font-semibold text-gray-900 mb-2">Expert Touch:</p>
+                    <p class="text-sm text-gray-600">100% of recommendations personally reviewed by Craig</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Step 5 -->
+          <div class="mb-16">
+            <div class="flex flex-col lg:flex-row gap-8 items-center">
+              <div class="lg:w-1/2">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="w-16 h-16 bg-red-600 text-white rounded-full flex items-center justify-center text-2xl font-bold">
+                    5
+                  </div>
+                  <h3 class="text-2xl font-bold text-gray-900">Report & Implementation</h3>
+                </div>
+                <p class="text-gray-600 mb-4">
+                  We deliver a comprehensive report with clear insights, benchmarks, and a prioritized action plan. This includes a presentation to key stakeholders and ongoing support.
+                </p>
+                <ul class="space-y-2">
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Executive summary presentation</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Detailed findings report</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="text-gray-600">90-day action plan</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Implementation support</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="lg:w-1/2">
+                <div class="bg-red-100 rounded-lg p-6">
+                  <h4 class="font-semibold text-gray-900 mb-3">Duration: 1-2 Days + Ongoing</h4>
+                  <p class="text-gray-600 text-sm mb-3">
+                    Report delivery includes presentation, Q&A, and 3 months of implementation support to ensure success.
+                  </p>
+                  <div class="bg-white rounded p-4">
+                    <p class="text-sm font-semibold text-gray-900 mb-2">Support Included:</p>
+                    <p class="text-sm text-gray-600">3 months of post-audit guidance</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Summary -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+            Complete Audit Timeline
+          </h2>
+          <div class="bg-gradient-to-r from-purple-100 to-red-100 rounded-lg p-8">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Standard Timeline</h3>
+                <ul class="space-y-2">
+                  <li class="flex justify-between">
+                    <span class="text-gray-600">Total Duration:</span>
+                    <span class="font-semibold text-gray-900">3-4 weeks</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="text-gray-600">Employee Time Required:</span>
+                    <span class="font-semibold text-gray-900">15-20 minutes</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="text-gray-600">Management Time:</span>
+                    <span class="font-semibold text-gray-900">4-6 hours total</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Fast-Track Option</h3>
+                <ul class="space-y-2">
+                  <li class="flex justify-between">
+                    <span class="text-gray-600">Total Duration:</span>
+                    <span class="font-semibold text-gray-900">2 weeks</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="text-gray-600">Best For:</span>
+                    <span class="font-semibold text-gray-900">Urgent needs</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="text-gray-600">Additional Cost:</span>
+                    <span class="font-semibold text-gray-900">+20%</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Our Process -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+            Why Our Process Works
+          </h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center">
+              <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Evidence-Based</h3>
+              <p class="text-gray-600">Every recommendation is backed by data and validated through scientific research and real-world results.</p>
+            </div>
+            
+            <div class="text-center">
+              <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Customized</h3>
+              <p class="text-gray-600">No two organizations are alike. Our process adapts to your unique culture, challenges, and objectives.</p>
+            </div>
+            
+            <div class="text-center">
+              <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Confidential</h3>
+              <p class="text-gray-600">All data is handled with the highest security standards. Employee responses remain completely anonymous.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-br from-purple-600 to-blue-600 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Begin Your Wellbeing Journey?
+          </h2>
+          <p class="text-xl mb-8">
+            Let's discuss how our proven process can transform your workplace culture and drive measurable results.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#contact" class="inline-block bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              Start Your Audit
+            </a>
+            <a href="/employee-wellness-audit" class="inline-block bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition-colors">
+              Learn About Benefits
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <div id="contact">
+      <ContactForm />
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

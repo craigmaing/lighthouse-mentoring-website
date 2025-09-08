@@ -1,0 +1,82 @@
+---
+export interface Props {
+  customItems?: Array<{
+    label: string;
+    href?: string;
+  }>;
+}
+
+const { customItems } = Astro.props;
+
+// Get current path
+const currentPath = Astro.url.pathname;
+
+// Generate breadcrumb items based on path
+let breadcrumbItems = [];
+
+// Always add Home
+breadcrumbItems.push({
+  label: 'Home',
+  href: '/'
+});
+
+// If custom items provided, use them
+if (customItems && customItems.length > 0) {
+  breadcrumbItems = [...breadcrumbItems, ...customItems];
+} else {
+  // Auto-generate from path
+  const pathSegments = currentPath.split('/').filter(segment => segment);
+  let accumulatedPath = '';
+  
+  pathSegments.forEach((segment, index) => {
+    accumulatedPath += `/${segment}`;
+    const isLast = index === pathSegments.length - 1;
+    
+    // Format the label
+    let label = segment
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+    
+    breadcrumbItems.push({
+      label,
+      href: isLast ? undefined : accumulatedPath
+    });
+  });
+}
+
+// Don't show breadcrumbs on homepage
+if (currentPath === '/') {
+  return null;
+}
+---
+
+{breadcrumbItems.length > 1 && (
+  <nav aria-label="Breadcrumb" class="bg-gray-50 border-b border-gray-200">
+    <div class="container mx-auto px-4 py-3">
+      <ol class="flex items-center space-x-2 text-sm">
+        {breadcrumbItems.map((item, index) => (
+          <li class="flex items-center">
+            {index > 0 && (
+              <svg class="w-4 h-4 text-gray-400 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            )}
+            {item.href ? (
+              <a 
+                href={item.href} 
+                class="text-gray-600 hover:text-blue-600 transition-colors"
+              >
+                {item.label}
+              </a>
+            ) : (
+              <span class="text-gray-900 font-medium" aria-current="page">
+                {item.label}
+              </span>
+            )}
+          </li>
+        ))}
+      </ol>
+    </div>
+  </nav>
+)}

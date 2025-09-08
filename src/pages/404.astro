@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/sections/Header.astro';
+import Footer from '../components/sections/Footer.astro';
+
+const title = 'Page Not Found - Lighthouse Mentoring';
+const description = 'The page you are looking for could not be found. Explore our workplace wellbeing audit services or return to our homepage.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <main>
+    <section class="min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-2xl mx-auto text-center">
+          <div class="mb-8">
+            <h1 class="text-8xl md:text-9xl font-bold text-gray-300 mb-4">404</h1>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Page Not Found
+            </h2>
+            <p class="text-lg text-gray-600 mb-8">
+              We couldn't find the page you're looking for. It might have been moved, deleted, or you may have typed the URL incorrectly.
+            </p>
+          </div>
+          
+          <div class="space-y-4">
+            <h3 class="text-xl font-semibold text-gray-900">Here are some helpful links:</h3>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                Return to Homepage
+              </a>
+              <a href="/workplace-wellbeing-assessment" class="inline-block bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors">
+                Our Services
+              </a>
+            </div>
+          </div>
+          
+          <div class="mt-12 pt-8 border-t border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">Popular Pages</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="/workplace-wellbeing-assessment" class="text-blue-600 hover:text-blue-800 hover:underline">
+                  Workplace Wellbeing Assessment
+                </a>
+              </li>
+              <li>
+                <a href="/employee-wellness-audit" class="text-blue-600 hover:text-blue-800 hover:underline">
+                  Employee Wellness Audit
+                </a>
+              </li>
+              <li>
+                <a href="/wellbeing-audit-process" class="text-blue-600 hover:text-blue-800 hover:underline">
+                  Our Wellbeing Audit Process
+                </a>
+              </li>
+              <li>
+                <a href="/about" class="text-blue-600 hover:text-blue-800 hover:underline">
+                  About Craig Fearn
+                </a>
+              </li>
+              <li>
+                <a href="/services" class="text-blue-600 hover:text-blue-800 hover:underline">
+                  Our Services
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="mt-8">
+            <p class="text-gray-600">
+              Need help? <a href="/#contact" class="text-blue-600 hover:text-blue-800 hover:underline">Contact us</a> and we'll point you in the right direction.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

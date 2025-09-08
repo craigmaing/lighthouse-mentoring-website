@@ -1,0 +1,282 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  type?: 'website' | 'article' | 'profile';
+  author?: string;
+  publishDate?: string;
+  modifiedDate?: string;
+}
+
+const { 
+  title, 
+  description,
+  image = '/lighthouse-logo.png',
+  type = 'website',
+  author = 'Craig Fearn',
+  publishDate,
+  modifiedDate
+} = Astro.props;
+
+// Organization Schema
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://lighthousementoring.co.uk/#organization",
+  "name": "Lighthouse Mentoring",
+  "alternateName": "Lighthouse Wellbeing Consultancy",
+  "url": "https://lighthousementoring.co.uk",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://lighthousementoring.co.uk/lighthouse-logo.png",
+    "width": 512,
+    "height": 512
+  },
+  "description": "Expert workplace wellbeing audit and assessment services for UK businesses",
+  "foundingDate": "2020",
+  "founder": {
+    "@type": "Person",
+    "@id": "https://lighthousementoring.co.uk/#craigfearn"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "GB",
+    "addressRegion": "Cornwall",
+    "addressLocality": "Cornwall"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+44-XXXX-XXXXXX",
+    "contactType": "customer service",
+    "availableLanguage": "English"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/craigfearn/",
+    "https://craigfearn.com/"
+  ],
+  "areaServed": {
+    "@type": "Country",
+    "name": "United Kingdom"
+  }
+};
+
+// Person Schema for Craig Fearn
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://lighthousementoring.co.uk/#craigfearn",
+  "name": "Craig Fearn",
+  "jobTitle": "Founder & Lead Wellbeing Consultant",
+  "worksFor": {
+    "@id": "https://lighthousementoring.co.uk/#organization"
+  },
+  "description": "Workplace wellbeing expert and HR consultant specializing in data-driven organizational health assessments",
+  "alumniOf": [
+    {
+      "@type": "Organization",
+      "name": "Royal Society for Public Health"
+    }
+  ],
+  "award": [
+    "IoD Aspiring Director Finalist 2025",
+    "IoD Global Director Finalist 2025",
+    "RSPH Fellow"
+  ],
+  "memberOf": [
+    {
+      "@type": "Organization",
+      "name": "Institute of Directors",
+      "description": "IoD Ambassador"
+    },
+    {
+      "@type": "Organization",
+      "name": "Royal Society for Public Health",
+      "description": "Fellow"
+    }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/craigfearn/",
+    "https://craigfearn.com/"
+  ],
+  "knowsAbout": [
+    "Workplace Wellbeing",
+    "Employee Mental Health",
+    "Organizational Psychology",
+    "HR Consultancy",
+    "Wellbeing Audits",
+    "AI-Powered Analytics"
+  ]
+};
+
+// Service Schema
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Workplace Wellbeing Audit",
+  "provider": {
+    "@id": "https://lighthousementoring.co.uk/#organization"
+  },
+  "name": "Workplace Wellbeing Audit & Assessment Services",
+  "description": "Comprehensive workplace wellbeing audits using AI-powered analysis to provide actionable insights for improving employee wellness, engagement, and productivity",
+  "areaServed": {
+    "@type": "Country",
+    "name": "United Kingdom"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Wellbeing Audit Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Comprehensive Wellbeing Audit",
+          "description": "Full organizational assessment covering all aspects of workplace wellbeing including mental health, engagement, culture, and productivity"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Employee Wellness Assessment",
+          "description": "Data-driven analysis of employee wellness metrics with actionable recommendations"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Quick Pulse Check",
+          "description": "Rapid assessment for immediate insights into team wellbeing and engagement levels"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Ongoing Wellbeing Partnership",
+          "description": "Continuous support to embed wellbeing into your organizational culture with regular assessments and guidance"
+        }
+      }
+    ]
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "SMEs, HR Directors, Business Owners, People Leaders"
+  },
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://lighthousementoring.co.uk",
+    "servicePhone": "+44-XXXX-XXXXXX",
+    "availableLanguage": {
+      "@type": "Language",
+      "name": "English"
+    }
+  }
+};
+
+// WebSite Schema with SearchAction
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://lighthousementoring.co.uk",
+  "name": "Lighthouse Mentoring",
+  "description": "Expert workplace wellbeing audit and assessment services",
+  "publisher": {
+    "@id": "https://lighthousementoring.co.uk/#organization"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://lighthousementoring.co.uk/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+};
+
+// Breadcrumb Schema (will be customized per page)
+const currentPage = Astro.url.pathname;
+const breadcrumbItems = [];
+
+if (currentPage !== '/') {
+  breadcrumbItems.push({
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "https://lighthousementoring.co.uk"
+  });
+  
+  const pathSegments = currentPage.split('/').filter(segment => segment);
+  let currentPath = '';
+  
+  pathSegments.forEach((segment, index) => {
+    currentPath += `/${segment}`;
+    const name = segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' ');
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      "position": index + 2,
+      "name": name,
+      "item": `https://lighthousementoring.co.uk${currentPath}`
+    });
+  });
+}
+
+const breadcrumbSchema = breadcrumbItems.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItems
+} : null;
+
+// FAQ Schema (for homepage)
+const faqSchema = currentPage === '/' ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a workplace wellbeing audit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A workplace wellbeing audit is a comprehensive assessment of your organization's employee wellness, mental health support, engagement levels, and workplace culture. It uses data-driven analysis to identify strengths and areas for improvement, providing actionable insights to enhance employee wellbeing and productivity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a wellbeing audit take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A typical wellbeing audit takes 2-4 weeks from initial consultation to final report delivery. This includes data collection, employee surveys, analysis using our AI-powered tools, and preparation of your customized recommendations and action plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Lighthouse Mentoring's approach unique?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We combine AI-powered analysis with human expertise to deliver deeper insights than traditional methods. Our founder, Craig Fearn, brings extensive HR experience and uses pattern recognition to identify wellbeing issues that others might miss, providing practical, implementable solutions tailored to your organization."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a wellbeing audit suitable for small businesses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. We specialize in working with SMEs and tailor our approach to fit your size and budget. Even small businesses can benefit significantly from understanding and improving employee wellbeing, often seeing immediate improvements in productivity, retention, and team morale."
+      }
+    }
+  ]
+} : null;
+
+// Combine all schemas
+const allSchemas = [
+  organizationSchema,
+  personSchema,
+  serviceSchema,
+  websiteSchema,
+  breadcrumbSchema,
+  faqSchema
+].filter(schema => schema !== null);
+---
+
+{allSchemas.map(schema => (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+))}

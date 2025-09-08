@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/sections/Header.astro';
+import Hero from '../components/sections/Hero.astro';
+import Features from '../components/sections/Features.astro';
+import Awards from '../components/sections/Awards.astro';
+import ContactForm from '../components/sections/ContactForm.astro';
+import Footer from '../components/sections/Footer.astro';
+
+const title = 'Workplace Wellbeing Audit & Assessment Services';
+const description = 'Expert workplace wellbeing audits using AI-powered analysis. Get actionable insights to improve employee wellness, engagement, and productivity. Free consultation.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <main>
+    <Hero />
+    <Awards />
+    <Features />
+    <ContactForm />
+  </main>
+  <Footer />
+</BaseLayout>
