@@ -12,10 +12,9 @@ import ROIStatistics from '../components/sections/ROIStatistics.astro';
 import LinkedInTestimonials from '../components/sections/LinkedInTestimonials.astro';
 import FAQSection from '../components/sections/FAQSection.astro';
 import Footer from '../components/sections/Footer.astro';
-import SectionDivider from '../components/ui/SectionDivider.astro';
 
-const title = 'Workplace Wellbeing Audit UK | Mental Health in the Workplace Assessment | Craig Fearn FRSPH';
-const description = 'Professional workplace culture assessment and employee satisfaction measurement by Craig Fearn FRSPH. Expert workplace wellbeing audits addressing mental health in the workplace. Transform your organisation with data-driven insights.';
+const title = 'Workplace Wellbeing Audit & Assessment Services | Lighthouse Mentoring';
+const description = 'Expert workplace wellbeing audits using AI-powered analysis. Get actionable insights to improve employee wellness, engagement, and productivity. Transform your workplace culture with data-driven assessments.';
 ---
 
 <BaseLayout title={title} description={description}>
@@ -24,15 +23,15 @@ const description = 'Professional workplace culture assessment and employee sati
     <!-- Hero Section -->
     <div class="relative bg-white">
       <PageHero 
-        title="Transform Your Workplace with a"
-        subtitle="Professional Wellbeing Audit"
-        description="Mental health in the workplace costs UK businesses £51 billion annually. Our comprehensive workplace wellbeing audit and employee satisfaction measurement identify the real problems affecting your team. Get actionable insights from our workplace culture assessment that deliver proven ROI."
-        ctaText="Get Your Free Assessment"
+        title="Transform Your Workplace with"
+        subtitle="Data-Driven Wellbeing Audits"
+        description="Discover how our AI-powered workplace wellbeing assessment helps UK businesses improve employee wellness and productivity. Our comprehensive wellbeing audit process identifies hidden costs and delivers actionable insights with proven £4.70 ROI for every £1 invested."
+        ctaText="Start Your Assessment"
         ctaLink="#assessment"
         secondaryCtaText="See How It Works"
         secondaryCtaLink="#solution"
         heroImage="/ai-brain-technology.png"
-        heroImageAlt="Craig Fearn FRSPH - Workplace Wellbeing Expert"
+        heroImageAlt="Craig Fearn FRSPH, Fellow CMI - Workplace Wellbeing Expert"
       />
     </div>
     
@@ -40,79 +39,119 @@ const description = 'Professional workplace culture assessment and employee sati
     <CredentialsBar />
     
     <!-- Section 1: The Problem -->
-    <div class="relative bg-gradient-to-br from-gray-50 via-white to-primary-50/20">
+    <div class="relative">
       <ProblemSection />
     </div>
     
-    <SectionDivider variant="wave" color="text-primary-100" flipped={true} />
+    <!-- Section Divider -->
+    <div class="relative py-8 bg-gradient-to-b from-gray-50 to-white">
+      <div class="container">
+        <div class="w-24 h-1 bg-gradient-to-r from-primary-400 to-accent-400 mx-auto"></div>
+      </div>
+    </div>
     
     <!-- Section 2: Our Solution -->
-    <div class="relative bg-white">
+    <div class="relative">
       <SolutionSection />
     </div>
     
-    <SectionDivider variant="gradient" />
+    <!-- Section Divider -->
+    <div class="relative py-8 bg-gradient-to-b from-white to-gray-50">
+      <div class="container">
+        <div class="w-24 h-1 bg-gradient-to-r from-primary-400 to-accent-400 mx-auto"></div>
+      </div>
+    </div>
     
     <!-- Section 2.5: Process Overview -->
-    <div class="relative bg-gradient-to-br from-secondary-50/20 via-white to-primary-50/20">
+    <div class="relative bg-gray-50">
       <ProcessOverview />
     </div>
     
-    <SectionDivider variant="curve" color="text-secondary-100" />
+    <!-- Section Divider -->
+    <div class="relative py-8 bg-gradient-to-b from-gray-50 to-white">
+      <div class="container">
+        <div class="w-24 h-1 bg-gradient-to-r from-primary-400 to-accent-400 mx-auto"></div>
+      </div>
+    </div>
     
     <!-- Section 3: Service Packages Overview -->
-    <div class="relative bg-white">
+    <div class="relative">
       <ServiceComparison />
     </div>
     
-    <SectionDivider variant="zigzag" color="text-primary-200" />
+    <!-- Section Divider -->
+    <div class="relative py-8 bg-gradient-to-b from-white to-gray-50">
+      <div class="container">
+        <div class="w-24 h-1 bg-gradient-to-r from-primary-400 to-accent-400 mx-auto"></div>
+      </div>
+    </div>
     
     <!-- Section 4: Proven Results -->
-    <div class="relative bg-gradient-to-br from-primary-50/30 via-white to-secondary-50/30">
+    <div class="relative bg-gray-50">
       <ROIStatistics />
     </div>
     
-    <SectionDivider variant="wave" color="text-secondary-100" flipped={false} />
+    <!-- Section Divider -->
+    <div class="relative py-8 bg-gradient-to-b from-gray-50 to-white">
+      <div class="container">
+        <div class="w-24 h-1 bg-gradient-to-r from-primary-400 to-accent-400 mx-auto"></div>
+      </div>
+    </div>
     
     <!-- Section 5: Why Choose Us -->
-    <div class="relative bg-white">
+    <div class="relative">
       <WhyChooseLighthouse />
     </div>
     
-    <SectionDivider variant="dots" />
+    <!-- Section Divider -->
+    <div class="relative py-8 bg-gradient-to-b from-white to-gray-50">
+      <div class="container">
+        <div class="w-24 h-1 bg-gradient-to-r from-primary-400 to-accent-400 mx-auto"></div>
+      </div>
+    </div>
     
     <!-- Section 6: Social Proof -->
-    <div class="relative bg-gradient-to-br from-gray-50 via-white to-gray-50">
+    <div class="relative bg-gray-50">
       <LinkedInTestimonials />
     </div>
     
-    <SectionDivider variant="curve" color="text-gray-300" flipped={true} />
+    <!-- Section Divider -->
+    <div class="relative py-8 bg-gradient-to-b from-gray-50 to-white">
+      <div class="container">
+        <div class="w-24 h-1 bg-gradient-to-r from-primary-400 to-accent-400 mx-auto"></div>
+      </div>
+    </div>
     
     <!-- Section 7: FAQ -->
     <div class="relative bg-white">
       <FAQSection />
     </div>
     
-    <SectionDivider variant="gradient" />
+    <!-- Final Divider before CTA -->
+    <div class="relative py-8 bg-gradient-to-b from-white to-primary-600">
+      <div class="container">
+        <div class="w-24 h-1 bg-white/50 mx-auto"></div>
+      </div>
+    </div>
     
     <!-- Section 8: Final CTA Section -->
     <section id="assessment" class="relative py-20 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white">
       <div class="container">
         <div class="max-w-3xl mx-auto text-center">
           <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-            Transform Mental Health in Your Workplace Today
+            Ready to Transform Your Workplace with a Wellbeing Audit?
           </h2>
           <p class="text-lg text-primary-100 mb-8">
-            Get your free workplace wellbeing assessment and discover how our workplace culture assessment 
-            methodology helps UK businesses improve employee satisfaction measurement scores while delivering 
-            £4.70 ROI for every £1 invested.
+            Join UK businesses achieving £4.70 ROI with our AI-powered workplace wellbeing assessment. 
+            Our comprehensive employee wellness audit identifies hidden costs and delivers actionable insights 
+            to improve productivity, retention, and workplace culture.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-primary-900 bg-white hover:bg-gray-100 rounded-md transition-colors duration-200 shadow-lg">
-              Book Your Free Assessment
+              Book Your Assessment
             </a>
-            <a href="/services" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-transparent border-2 border-white hover:bg-white hover:text-primary-900 rounded-md transition-colors duration-200">
-              Explore Our Services
+            <a href="/about" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-transparent border-2 border-white hover:bg-white hover:text-primary-900 rounded-md transition-colors duration-200">
+              Learn About Craig
             </a>
           </div>
         </div>

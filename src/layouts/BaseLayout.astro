@@ -10,7 +10,7 @@ export interface Props {
 
 const { 
   title, 
-  description = 'Lighthouse Mentoring - Transform your workplace culture with data-driven wellbeing audits. Expert HR consultancy for SMEs seeking measurable improvements in employee engagement and productivity.',
+  description = 'Lighthouse Mentoring - Transform your workplace culture with data-driven wellbeing audits. Expert consultancy for SMEs seeking measurable improvements in employee engagement and productivity.',
   image = '/lighthouse-logo.png'
 } = Astro.props;
 
@@ -53,6 +53,31 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <title>{title} | Lighthouse Mentoring</title>
     
     <SEO title={title} description={description} image={image} />
+    
+    <style>
+      /* Smooth scroll behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Smooth section transitions */
+      @media (prefers-reduced-motion: no-preference) {
+        html {
+          scroll-behavior: smooth;
+        }
+        
+        section {
+          transition: opacity 0.3s ease-in-out;
+        }
+      }
+      
+      /* Reduce motion for accessibility */
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
   </head>
   <body class="min-h-screen bg-gray-50">
     <slot />

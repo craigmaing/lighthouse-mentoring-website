@@ -1,143 +1,290 @@
 ---
+import { 
+  Award, 
+  Brain, 
+  TrendingUp, 
+  Shield,
+  CheckCircle2,
+  Star,
+  Users,
+  Sparkles,
+  ArrowRight,
+  Quote
+} from 'lucide-astro';
+
 const features = [
   {
-    icon: 'award',
+    icon: Award,
     title: 'Recognised Industry Leader',
-    badge: 'FRSPH Fellow',
-    description: 'Fellow of the Royal Society for Public Health and IoD Ambassador, bringing internationally recognised expertise to your organisation.'
+    badge: 'FRSPH & CMI Fellow',
+    description: 'Fellow of the Royal Society for Public Health and Chartered Management Institute, bringing internationally recognised expertise to your workplace wellbeing assessment.',
+    stat: '',
+    statLabel: '',
+    gradient: 'from-purple-400 to-purple-600'
   },
   {
-    icon: 'brain',
+    icon: Brain,
     title: 'Psychology-Based Approach',
     badge: 'Mental Health Expert',
-    description: 'Applying evidence-based psychological principles to address mental health in the workplace through comprehensive workplace culture assessment.'
+    description: 'Our wellbeing audit applies evidence-based psychological principles to improve employee wellness and mental health outcomes.',
+    stat: '',
+    statLabel: '',
+    gradient: 'from-blue-400 to-blue-600'
   },
   {
-    icon: 'trending-up',
+    icon: TrendingUp,
     title: 'Proven Track Record',
-    badge: '17+ Years Experience',
-    description: '17+ years of experience transforming workplace cultures with measurable ROI and lasting positive impact.'
+    badge: '£4.70 ROI',
+    description: '17+ years of experience transforming workplace cultures with measurable ROI and lasting positive impact.',
+    stat: '',
+    statLabel: '',
+    gradient: 'from-green-400 to-green-600'
   },
   {
-    icon: 'shield',
+    icon: Shield,
     title: 'ISO 45003 Compliant',
     badge: 'ISO Certified',
-    description: 'Following international standards for mental health in the workplace, ensuring our workplace wellbeing audit meets global best practices.'
+    description: 'Our workplace wellbeing assessment follows ISO 45003 standards, ensuring your employee wellness audit meets international best practices.',
+    stat: '',
+    statLabel: '',
+    gradient: 'from-orange-400 to-orange-600'
   }
 ];
 
 const differentiators = [
-  'Unique AI + Human expertise methodology',
-  'Pattern recognition across diverse sectors',
-  'Direct access to Craig Fearn\'s expertise',
-  'Personalised approach for SMEs',
-  'Evidence-based interventions',
-  'Continuous support post-assessment'
+  {
+    title: 'AI + Human Expertise',
+    description: 'Unique methodology combining advanced AI analysis with Craig\'s personal expertise',
+    icon: Sparkles
+  },
+  {
+    title: 'Pattern Recognition',
+    description: 'Identify hidden correlations across diverse sectors and industries',
+    icon: Brain
+  },
+  {
+    title: 'Direct Access',
+    description: 'Work directly with Craig Fearn, not junior consultants',
+    icon: Users
+  },
+  {
+    title: 'SME-Focused',
+    description: 'Tailored approach designed specifically for UK SMEs',
+    icon: Star
+  }
+];
+
+const credentials = [
+  { name: 'FRSPH Fellow', highlight: true },
+  { name: 'Fellow CMI', highlight: true },
+  { name: 'IoD Ambassador', highlight: false },
+  { name: 'EMCC Senior Member', highlight: false },
+  { name: 'Mental Health First Aider', highlight: false },
+  { name: 'ISO 45003 Practitioner', highlight: false }
 ];
 ---
 
-<section id="why-choose" class="section bg-white">
-  <div class="container">
-    <div class="text-center mb-12">
-      <h2 class="text-gray-900 mb-4">Why Choose Lighthouse for Your Workplace Wellbeing Audit?</h2>
-      <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-4">
-        When you work with Lighthouse, you're partnering with Craig Fearn, a recognised authority in 
-        mental health in the workplace with the credentials and experience to transform your organisation 
-        through comprehensive workplace culture assessment.
+<section id="why-choose" class="section relative bg-gradient-to-br from-white via-primary-50/20 to-accent-50/10 overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-[0.02]">
+    <div class="absolute top-1/4 -right-1/4 w-[600px] h-[600px] bg-primary-500 rounded-full filter blur-3xl"></div>
+    <div class="absolute bottom-1/4 -left-1/4 w-[600px] h-[600px] bg-accent-500 rounded-full filter blur-3xl"></div>
+  </div>
+  
+  <div class="container relative z-10">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+        Why Choose Our <span class="text-gradient bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">Workplace Wellbeing Assessment</span> Services?
+      </h2>
+      <p class="text-base md:text-lg text-gray-700 max-w-3xl mx-auto mb-4 leading-relaxed">
+        Our AI-powered wellbeing audit delivers deeper insights than traditional employee wellness assessments. 
+        Led by Craig Fearn FRSPH, Fellow CMI, we combine advanced data analysis with human expertise to transform workplace culture 
+        through comprehensive workplace wellbeing assessments.
       </p>
       <p class="text-gray-600 max-w-3xl mx-auto">
-        Our workplace wellbeing assessment methodology combines decades of expertise with cutting-edge 
-        employee satisfaction measurement tools. Unlike generic consultants, we provide personalised 
-        workplace culture assessments tailored specifically for UK SMEs.
+        Our unique workplace wellbeing audit methodology uses pattern recognition and AI analysis to identify 
+        hidden wellness challenges. Unlike traditional surveys, our employee wellness audit provides actionable insights 
+        with proven ROI for UK businesses.
       </p>
     </div>
 
-    <!-- Feature Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-      {features.map((feature) => (
-        <div class="text-center group">
-          <div class="relative mb-6">
-            <div class="w-20 h-20 mx-auto bg-gradient-to-br from-primary-100 to-secondary-100 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <svg class="w-10 h-10 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {feature.icon === 'award' && (
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                )}
-                {feature.icon === 'brain' && (
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                )}
-                {feature.icon === 'trending-up' && (
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                )}
-                {feature.icon === 'shield' && (
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                )}
-              </svg>
+    <!-- Feature Cards with Stats -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      {features.map((feature, index) => (
+        <div class="group feature-card relative bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden" style={`animation-delay: ${index * 0.1}s`}>
+          <!-- Top Badge -->
+          <div class={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${feature.gradient}`}></div>
+          
+          <div class="p-6">
+            <!-- Badge -->
+            <div class="absolute -top-2 right-4">
+              <span class={`bg-gradient-to-r ${feature.gradient} text-white text-xs px-3 py-1 rounded-full font-semibold shadow-lg`}>
+                {feature.badge}
+              </span>
             </div>
-            <span class="absolute -top-2 left-1/2 -translate-x-1/2 bg-primary-600 text-white text-xs px-2 py-1 rounded-full whitespace-nowrap">
-              {feature.badge}
-            </span>
+            
+            <!-- Icon -->
+            <div class="mb-4 mt-2">
+              <div class="w-16 h-16 bg-gradient-to-br from-primary-100 to-accent-100 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                <feature.icon class="w-8 h-8 text-primary-600" />
+              </div>
+            </div>
+            
+            <!-- Content -->
+            <h3 class="text-base font-bold text-gray-900 mb-2">{feature.title}</h3>
+            <p class="text-xs text-gray-600 mb-4 leading-relaxed">{feature.description}</p>
+            
+            {feature.stat && (
+              <div class="pt-4 border-t border-gray-100">
+                <div class="flex items-baseline gap-1">
+                  <span class={`text-xl font-bold bg-gradient-to-r ${feature.gradient} bg-clip-text text-transparent`}>
+                    {feature.stat}
+                  </span>
+                  <span class="text-xs text-gray-500 font-medium">{feature.statLabel}</span>
+                </div>
+              </div>
+            )}
           </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
-          <p class="text-sm text-gray-600">{feature.description}</p>
         </div>
       ))}
     </div>
 
-    <!-- Direct Access Section -->
-    <div class="grid lg:grid-cols-2 gap-12 items-center bg-gradient-to-br from-primary-50 to-secondary-50 rounded-3xl p-8 md:p-12">
-      <div>
-        <h3 class="text-2xl font-bold text-gray-900 mb-6">Direct Access to Expertise</h3>
-        <blockquote class="bg-white rounded-xl p-6 shadow-lg mb-6">
-          <p class="text-gray-700 italic mb-4">
-            "I personally oversee every workplace wellbeing assessment and employee satisfaction measurement 
-            process, ensuring you receive insights drawn from my extensive experience addressing mental health 
-            in the workplace. Your success is my personal commitment."
-          </p>
-          <cite class="text-gray-900 font-semibold not-italic">— Craig Fearn, Founder & Lead Consultant</cite>
-        </blockquote>
-        
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm font-medium">
-            FRSPH Fellow
-          </span>
-          <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm font-medium">
-            IoD Ambassador
-          </span>
-          <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm font-medium">
-            EMCC Senior Member
-          </span>
+    <!-- Direct Access Section Redesigned -->
+    <div class="bg-white rounded-3xl shadow-2xl overflow-hidden mb-16">
+      <div class="grid lg:grid-cols-2">
+        <!-- Left: Quote Section -->
+        <div class="bg-gradient-to-br from-primary-600 to-primary-700 p-10 lg:p-12 text-white relative">
+          <Quote class="w-12 h-12 text-white/20 absolute top-8 left-8" />
+          
+          <div class="relative z-10">
+            <h3 class="text-2xl font-bold mb-6">Direct Access to Expertise</h3>
+            
+            <blockquote class="mb-8">
+              <p class="text-lg leading-relaxed mb-6 text-white/95">
+                "I personally oversee every workplace wellbeing audit using our AI-powered analysis platform, 
+                ensuring you receive actionable insights from both advanced data analytics and my extensive experience. 
+                Every employee wellness assessment is customized to deliver maximum ROI for your organization."
+              </p>
+              <cite class="text-white font-semibold not-italic flex items-center gap-2">
+                <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                  <span class="text-lg font-bold">CF</span>
+                </div>
+                Craig Fearn, Founder & Lead Consultant
+              </cite>
+            </blockquote>
+            
+            <!-- Credentials -->
+            <div class="flex flex-wrap gap-2">
+              {credentials.map((cred) => (
+                <span class={`${cred.highlight ? 'bg-white text-primary-700' : 'bg-white/20 text-white'} px-3 py-1 rounded-full text-sm font-medium`}>
+                  {cred.name}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
-      
-      <div>
-        <h4 class="font-bold text-gray-900 mb-4">What Makes Us Different:</h4>
-        <ul class="space-y-3">
-          {differentiators.map((item) => (
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              <span class="text-gray-700">{item}</span>
-            </li>
-          ))}
-        </ul>
+        
+        <!-- Right: Differentiators -->
+        <div class="p-10 lg:p-12">
+          <h4 class="text-2xl font-bold text-gray-900 mb-8">What Makes Us Different</h4>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {differentiators.map((item, index) => (
+              <div class="group differentiator-card" style={`animation-delay: ${index * 0.1}s`}>
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 bg-gradient-to-br from-primary-100 to-accent-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <item.icon class="w-6 h-6 text-primary-600" />
+                  </div>
+                  <div>
+                    <h5 class="text-sm font-bold text-gray-900 mb-1">{item.title}</h5>
+                    <p class="text-xs text-gray-600 leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <!-- Quick Stats -->
+          <div class="mt-8 pt-8 border-t border-gray-200">
+            <div class="grid grid-cols-2 gap-8 text-center">
+              <div>
+                <p class="text-xl font-bold text-primary-600">17+</p>
+                <p class="text-xs text-gray-600">Years Experience</p>
+              </div>
+              <div>
+                <p class="text-xl font-bold text-primary-600">£4.70</p>
+                <p class="text-xs text-gray-600">ROI per £1</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- CTA -->
-    <div class="text-center mt-12">
-      <p class="text-lg text-gray-700 mb-6">
-        Ready to work with a proven expert who understands your challenges?
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/about" class="btn-outline flex items-center justify-center gap-2">
-          Learn More About Craig
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-          </svg>
-        </a>
-        <a href="#assessment" class="btn-primary">Get Your Free Assessment</a>
+    <!-- CTA Section -->
+    <div class="text-center">
+      <div class="bg-gradient-to-r from-primary-50 to-accent-50 rounded-2xl p-8 inline-block">
+        <p class="text-lg font-semibold text-gray-900 mb-6">
+          Ready to work with a proven expert who understands your challenges?
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/about" class="group inline-flex items-center justify-center px-6 py-3 text-base font-medium text-primary-700 bg-white hover:bg-gray-50 rounded-lg shadow-md transition-all duration-200">
+            Learn More About Craig
+            <ArrowRight class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </a>
+          <a href="#assessment" class="group inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300">
+            Start Your Assessment
+            <ArrowRight class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  /* Text gradient animation */
+  .text-gradient {
+    background-size: 200% auto;
+    animation: gradient-shift 3s ease infinite;
+  }
+  
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Feature card animation */
+  .feature-card {
+    opacity: 0;
+    animation: slideInUp 0.8s ease-out forwards;
+  }
+  
+  .differentiator-card {
+    opacity: 0;
+    animation: fadeInScale 0.6s ease-out forwards;
+  }
+  
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>

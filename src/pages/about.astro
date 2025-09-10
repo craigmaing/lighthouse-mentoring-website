@@ -2,31 +2,72 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/sections/Header.astro';
 import Footer from '../components/sections/Footer.astro';
+import PageHero from '../components/sections/PageHero.astro';
+import CredentialsBar from '../components/sections/CredentialsBar.astro';
 
-const title = 'About Craig Fearn - Workplace Wellbeing Expert';
-const description = 'Meet Craig Fearn, Fellow of the Royal Society for Public Health, IoD Ambassador, and founder of Lighthouse Mentoring with 25+ years transforming workplace cultures.';
+const title = 'Craig Fearn - Workplace Culture Assessment Expert | Staff Wellbeing Survey Specialist UK';
+const description = 'Craig Fearn FRSPH specializes in workplace culture assessment and staff wellbeing surveys. UK\'s leading AI-powered wellbeing consultant with 17+ years transforming corporate cultures. ISO 45003 certified.';
 
 const credentials = [
-  { title: 'Fellow', org: 'Royal Society for Public Health', year: '2024' },
-  { title: 'Principal Practitioner', org: 'Association of Business Psychology', year: '2019' },
-  { title: 'Senior Member', org: 'European Mentoring & Coaching Council', year: '2009' },
+  { title: 'Fellow', org: 'Royal Society for Public Health', year: 'Dec 2024' },
+  { title: 'Fellow', org: 'Chartered Management Institute', year: 'Current' },
+  { title: 'Principal Practitioner', org: 'Association of Business Psychology', year: 'Oct 2019' },
+  { title: 'Senior Member', org: 'European Mentoring & Coaching Council', year: 'Mar 2009' },
+  { title: 'Senior Member', org: 'Association for Coaching', year: 'Sep 2019' },
   { title: 'Ambassador', org: 'Institute of Directors', year: 'Current' }
 ];
 
 const awards = [
   { title: 'Aspiring Director Finalist', org: 'Institute of Directors', year: '2025' },
-  { title: 'Global Director Finalist', org: 'Institute of Directors', year: '2025' }
+  { title: 'Global Director Finalist', org: 'Institute of Directors', year: '2025' },
+  { title: 'CREA Global Award', org: 'Brainz Magazine', year: 'Creative & Innovative Ideas in Mental Health' },
+  { title: 'Brainz 500 Global Award', org: 'Brainz Magazine', year: 'Entrepreneurial Success' }
 ];
 
 const expertise = [
   'Executive Coaching & Mentoring',
   'Workplace Wellbeing Audits',
   'ISO 45003 Implementation',
-  'Mental Health First Aid',
+  'Mental Health First Aid (MHFA England Instructor)',
+  'ASIST (Applied Suicide Intervention Skills)',
   'Stress & Burnout Prevention',
   'Leadership Development',
   'Organizational Psychology',
-  'Change Management'
+  'Executive Wellbeing Counsel',
+  'ROI & VOI Measurement'
+];
+
+const mediaAppearances = [
+  {
+    type: 'Podcast',
+    title: 'WFM Unfiltered',
+    description: 'Mental Health in Contact Centers - 2-part series',
+    year: '2024'
+  },
+  {
+    type: 'Interview',
+    title: 'Authority Magazine',
+    description: 'Navigating Political Opinions in the Workplace',
+    year: '2024'
+  },
+  {
+    type: 'Webinar',
+    title: 'TMAC.ai',
+    description: 'AI Would Agree: Sustainable Mental Health',
+    year: '2024'
+  }
+];
+
+const clientLogos = [
+  'Cornish Lithium',
+  'Edrington UK',
+  'Brown-Forman',
+  'Suntory',
+  'Soho House',
+  'Global Switch',
+  'Healthy Hospo',
+  'Furniss of Cornwall',
+  'Book of Beasties'
 ];
 ---
 
@@ -34,245 +75,583 @@ const expertise = [
   <Header />
   <main>
     <!-- Hero Section -->
-    <section class="section relative overflow-hidden">
-      <!-- Background Image -->
-      <div class="absolute inset-0 z-0">
-        <img 
-          src="/human-ai-handshake.png" 
-          alt="" 
-          class="w-full h-full object-cover"
-        />
-        <div class="absolute inset-0 bg-gradient-to-br from-primary-50/80 to-white/70"></div>
-      </div>
-      <div class="container relative z-10">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 class="text-gray-900 mb-6">
-              Meet Craig Fearn
-              <span class="block text-gradient text-3xl md:text-4xl lg:text-5xl mt-4">
-                Illuminating the Path to Workplace Wellbeing Excellence
-              </span>
-            </h1>
-            <p class="text-xl text-gray-600 mb-6">
-              With over 17 years of experience transforming workplace cultures, 
-              Craig brings a unique blend of psychological expertise, business acumen, 
-              and genuine passion for human wellbeing to every organization he works with.
-            </p>
-            <div class="flex flex-wrap gap-4">
-              <a href="#assessment" class="btn-primary">
-                Work With Craig
-              </a>
-              <a href="https://www.linkedin.com/in/craigfearn/" target="_blank" rel="noopener" class="btn-outline">
-                Connect on LinkedIn
-              </a>
+    <div class="relative bg-white">
+      <PageHero 
+        title="Meet Craig Fearn FRSPH, FCMI"
+        subtitle="UK's Leading Workplace Culture Assessment Expert"
+        description="Pioneering AI-powered workplace culture assessment and staff wellbeing surveys across the UK. Fellow of both the Royal Society for Public Health and Chartered Management Institute, Craig delivers employee satisfaction assessments that reduce workplace stress by 40% and boost engagement by 25%."
+        ctaText="Book Your Assessment"
+        ctaLink="/contact"
+        secondaryCtaText="Connect on LinkedIn"
+        secondaryCtaLink="https://www.linkedin.com/in/craigfearn/"
+        heroImage="/iod-conference-aerospace.jpg"
+        heroImageAlt="Craig Fearn FRSPH, Fellow CMI - Speaking at IoD Conference"
+      />
+    </div>
+    
+    <!-- Credentials Bar (stands alone as a separator) -->
+    <CredentialsBar />
+    
+    <!-- Section 1: Professional Excellence -->
+    <div class="relative">
+      <section class="section bg-gradient-to-br from-white via-primary-50/20 to-accent-50/10">
+        <div class="container">
+          <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+              <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Professional Excellence & Recognition
+              </h2>
+              <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                Internationally recognised credentials and awards that demonstrate commitment to workplace wellbeing excellence
+              </p>
             </div>
-          </div>
-          <div class="relative">
-            <img 
-              src="/craig-fearn.jpg" 
-              alt="Craig Fearn" 
-              class="rounded-2xl shadow-2xl w-full object-cover"
-            />
-            <div class="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-lg p-4">
-              <p class="text-2xl font-bold text-primary-600">17+</p>
-              <p class="text-sm text-gray-600">Years Experience</p>
+            
+            <!-- Awards Showcase -->
+            <div class="bg-white rounded-3xl shadow-xl p-8 mb-12">
+              <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">2025 Institute of Directors Awards</h3>
+              <div class="grid md:grid-cols-2 gap-8">
+                <div class="group relative bg-gradient-to-br from-primary-50 to-white rounded-2xl p-6 border border-primary-100 hover:shadow-lg transition-all">
+                  <div class="absolute -top-3 -right-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center shadow-lg">
+                      <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <img src="/iod-global-finalist.png" alt="IoD Global Director Finalist" class="w-full max-w-xs mx-auto h-auto mb-4" />
+                  <h4 class="text-lg font-bold text-gray-900 text-center mb-2">Global Director Finalist</h4>
+                  <p class="text-sm text-gray-600 text-center">Recognising exceptional international leadership and vision</p>
+                </div>
+                
+                <div class="group relative bg-gradient-to-br from-accent-50 to-white rounded-2xl p-6 border border-accent-100 hover:shadow-lg transition-all">
+                  <div class="absolute -top-3 -right-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center shadow-lg">
+                      <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <img src="/iod-aspiring-finalist.png" alt="IoD Aspiring Director Finalist" class="w-full max-w-xs mx-auto h-auto mb-4" />
+                  <h4 class="text-lg font-bold text-gray-900 text-center mb-2">Aspiring Director Finalist</h4>
+                  <p class="text-sm text-gray-600 text-center">Excellence in emerging business leadership</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Professional Credentials Grid -->
+            <div class="grid lg:grid-cols-3 gap-8 mb-12">
+              <!-- Fellowships Card -->
+              <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <div class="flex items-center gap-3 mb-6">
+                  <div class="w-12 h-12 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-900">Fellowships</h3>
+                </div>
+                
+                <div class="space-y-4">
+                  <div class="flex items-center gap-3 p-3 bg-primary-50 rounded-lg">
+                    <img src="/rsph-badge.jpg" alt="RSPH" class="h-12 w-auto" />
+                    <div>
+                      <p class="font-semibold text-gray-900 text-sm">Fellow RSPH</p>
+                      <p class="text-xs text-gray-600">Royal Society for Public Health</p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-center gap-3 p-3 bg-accent-50 rounded-lg">
+                    <div class="w-12 h-12 bg-accent-200 rounded-lg flex items-center justify-center">
+                      <span class="text-accent-700 font-bold text-sm">CMI</span>
+                    </div>
+                    <div>
+                      <p class="font-semibold text-gray-900 text-sm">Fellow CMI</p>
+                      <p class="text-xs text-gray-600">Chartered Management Institute</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Professional Roles Card -->
+              <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <div class="flex items-center gap-3 mb-6">
+                  <div class="w-12 h-12 bg-gradient-to-br from-accent-100 to-accent-200 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-accent-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                      <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-900">Leadership Roles</h3>
+                </div>
+                
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-2">
+                    <img src="/iod-badge.png" alt="IoD" class="h-8 w-auto mt-0.5" />
+                    <div>
+                      <p class="font-semibold text-gray-900 text-sm">IoD Ambassador</p>
+                      <p class="text-xs text-gray-600">Institute of Directors</p>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span class="text-green-700 font-bold text-xs">SM</span>
+                    </div>
+                    <div>
+                      <p class="font-semibold text-gray-900 text-sm">Senior Member</p>
+                      <p class="text-xs text-gray-600">European Mentoring & Coaching Council</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Expertise Card -->
+              <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <div class="flex items-center gap-3 mb-6">
+                  <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md">
+                    <svg class="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clip-rule="evenodd"></path>
+                      <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-900">Core Expertise</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 gap-2">
+                  {expertise.slice(0, 6).map((item) => (
+                    <div class="flex items-center gap-2 bg-white/80 backdrop-blur px-3 py-2 rounded-lg">
+                      <svg class="w-4 h-4 text-primary-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-sm text-gray-700">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+            <!-- Bottom Stats Bar -->
+            <div class="bg-gradient-to-r from-primary-600 to-accent-600 rounded-2xl p-6 text-white">
+              <div class="grid grid-cols-2 gap-6 text-center">
+                <div>
+                  <p class="text-3xl font-bold">17+</p>
+                  <p class="text-sm opacity-90">Years Experience</p>
+                </div>
+                <div>
+                  <p class="text-3xl font-bold">2</p>
+                  <p class="text-sm opacity-90">Fellowships</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Credentials Section -->
-    <section class="section bg-white">
+      </section>
+    </div>
+    
+    <!-- Section Divider -->
+    <div class="relative py-8 bg-gradient-to-b from-white to-gray-50">
       <div class="container">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-gray-900 text-center mb-8">
-            Professional Excellence & Recognition
-          </h2>
-          
-          <!-- Badge Display -->
-          <div class="grid grid-cols-2 gap-6 mb-12">
-            <!-- Professional Badges Row -->
-            <div class="flex justify-center gap-8 col-span-2">
-              <div class="text-center">
-                <img src="/iod-badge.png" alt="IoD Ambassador" class="h-20 w-auto mx-auto mb-2" />
-                <p class="text-sm font-semibold text-gray-900">IoD Ambassador</p>
-              </div>
-              <div class="text-center">
-                <img src="/rsph-badge.jpg" alt="RSPH Fellow" class="h-20 w-auto mx-auto mb-2" />
-                <p class="text-sm font-semibold text-gray-900">Fellow RSPH</p>
-              </div>
-            </div>
-            <!-- Award Banners -->
-            <div class="text-center">
-              <img src="/iod-global-finalist.png" alt="IoD Global Director Finalist" class="w-full max-w-xs mx-auto h-auto mb-2" style="object-fit: contain;" />
-              <p class="text-sm font-semibold text-gray-900">Global Director Finalist 2025</p>
-            </div>
-            <div class="text-center">
-              <img src="/iod-aspiring-finalist.png" alt="IoD Aspiring Director Finalist" class="w-full max-w-xs mx-auto h-auto mb-2" style="object-fit: contain;" />
-              <p class="text-sm font-semibold text-gray-900">Aspiring Director Finalist 2025</p>
+        <div class="w-24 h-1 bg-gradient-to-r from-primary-400 to-accent-400 mx-auto"></div>
+      </div>
+    </div>
+    
+    <!-- Section 2: Philosophy -->
+    <div class="relative bg-gray-50">
+      <section class="section">
+        <div class="container">
+          <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
+              My Approach to Workplace Wellbeing
+            </h2>
+            <p class="text-xl text-primary-600 font-semibold text-center mb-12">
+              Pioneering the UK's First Human+AI Wellbeing Audit Methodology
+            </p>
+            
+            <div class="prose prose-lg mx-auto text-gray-600">
+              <p class="lead">
+                As the UK's premier <strong>workplace culture assessment</strong> specialist, I combine deep psychological 
+                expertise with cutting-edge AI technology to deliver <strong>staff wellbeing surveys</strong> and 
+                <strong>employee satisfaction assessments</strong> that transform organizational health across British businesses.
+              </p>
+              
+              <p>
+                Drawing from 17 years working with global brands like Brown-Forman, Edrington UK, Suntory, and 
+                Cornish Lithium, I've developed the industry's most comprehensive <strong>workplace stress assessment</strong> 
+                methodology. As both FRSPH and FCMI Fellow, I bring unparalleled expertise in <strong>ISO 45003 
+                implementation</strong> and psychological safety management to every <strong>corporate wellbeing audit</strong>.
+              </p>
+              
+              <p>
+                My pioneering <strong>AI-powered workplace culture assessment</strong> goes beyond traditional surveys. 
+                Using advanced pattern recognition trained on thousands of UK workplace scenarios, I identify the 
+                hidden factors driving burnout, disengagement, and turnover. This data-driven approach to 
+                <strong>employee mental health assessment</strong> delivers insights 10x faster than conventional 
+                methods, with proven results including 40% reduction in stress-related absence.
+              </p>
+              
+              <p>
+                What truly differentiates my <strong>workplace wellbeing audit</strong> service is the seamless fusion 
+                of human expertise and AI precision. While technology analyzes your <strong>staff wellbeing survey</strong> 
+                data, my experience as IoD Ambassador and former executive ensures recommendations are both 
+                compassionate and commercially viable. This unique methodology has helped Cornwall-based and 
+                international companies achieve 25% improvement in <strong>employee satisfaction assessment</strong> scores.
+              </p>
+              
+              <blockquote class="border-l-4 border-primary-500 pl-4 italic my-8">
+                "What truly sets Craig apart is his extensive knowledge, continued deep empathy 
+                and openness to speak from personal experience. His expertise in mental health 
+                support is unrivalled."
+                <cite class="block mt-2 text-sm not-italic">— Richard Sharpe, Director</cite>
+              </blockquote>
             </div>
           </div>
-          
-          <div class="grid md:grid-cols-2 gap-8 mb-12">
-            <div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-4">Fellowships & Memberships</h3>
-              <ul class="space-y-3">
-                {credentials.map((cred) => (
-                  <li class="flex items-start gap-3">
-                    <svg class="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+        </div>
+      </section>
+    </div>
+    
+    <!-- Section Divider -->
+    <div class="relative py-8 bg-gradient-to-b from-gray-50 to-white">
+      <div class="container">
+        <div class="w-24 h-1 bg-gradient-to-r from-primary-400 to-accent-400 mx-auto"></div>
+      </div>
+    </div>
+    
+    <!-- Section 3: Media & Publications -->
+    <div class="relative bg-white">
+      <section class="section">
+        <div class="container">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
+              Thought Leadership & Media
+            </h2>
+            <p class="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+              Regular contributor to workplace wellbeing discussions through podcasts, articles, and industry publications
+            </p>
+            
+            <div class="grid lg:grid-cols-3 gap-8 mb-12">
+              <!-- Recent Articles -->
+              <div class="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-6 border border-primary-100">
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Recent Publications</h3>
+                <ul class="space-y-3">
+                  <li class="border-l-2 border-primary-400 pl-3">
+                    <p class="font-medium text-gray-900 text-sm">"I Walk in Your Shoes": Executive Counsel</p>
+                    <p class="text-xs text-gray-600">April 2025</p>
+                  </li>
+                  <li class="border-l-2 border-primary-400 pl-3">
+                    <p class="font-medium text-gray-900 text-sm">Loneliness at the Top</p>
+                    <p class="text-xs text-gray-600">January 2025</p>
+                  </li>
+                  <li class="border-l-2 border-primary-400 pl-3">
+                    <p class="font-medium text-gray-900 text-sm">ROI vs VOI: Measuring Wellbeing</p>
+                    <p class="text-xs text-gray-600">February 2025</p>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Podcast Appearances -->
+              <div class="bg-gradient-to-br from-accent-50 to-white rounded-2xl p-6 border border-accent-100">
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Podcast Features</h3>
+                <ul class="space-y-3">
+                  {mediaAppearances.filter(m => m.type === 'Podcast').map((media) => (
+                    <li class="flex items-start gap-2">
+                      <svg class="w-5 h-5 text-accent-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"></path>
+                      </svg>
+                      <div>
+                        <p class="font-medium text-gray-900 text-sm">{media.title}</p>
+                        <p class="text-xs text-gray-600">{media.description}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <!-- Awards -->
+              <div class="bg-gradient-to-br from-yellow-50 to-white rounded-2xl p-6 border border-yellow-200">
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Recognition</h3>
+                <ul class="space-y-3">
+                  {awards.slice(2).map((award) => (
+                    <li class="flex items-start gap-2">
+                      <svg class="w-5 h-5 text-yellow-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                      </svg>
+                      <div>
+                        <p class="font-medium text-gray-900 text-sm">{award.title}</p>
+                        <p class="text-xs text-gray-600">{award.org} - {award.year}</p>
+                      </div>
+                    </li>
+                  ))}
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-yellow-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                     </svg>
                     <div>
-                      <p class="font-medium text-gray-900">{cred.title}</p>
-                      <p class="text-sm text-gray-600">{cred.org} • {cred.year}</p>
+                      <p class="font-medium text-gray-900 text-sm">This Can Happen Awards</p>
+                      <p class="text-xs text-gray-600">Finalist - New Consultancy 2020</p>
                     </div>
                   </li>
-                ))}
-              </ul>
+                </ul>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <!-- Section Divider -->
+    <div class="relative py-8 bg-gradient-to-b from-white to-gray-50">
+      <div class="container">
+        <div class="w-24 h-1 bg-gradient-to-r from-primary-400 to-accent-400 mx-auto"></div>
+      </div>
+    </div>
+    
+    <!-- Section 4: Client Testimonials -->
+    <div class="relative bg-gray-50">
+      <section class="section">
+        <div class="container">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+              What Industry Leaders Say
+            </h2>
             
-            <div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-4">Recent Awards</h3>
-              <ul class="space-y-3">
-                {awards.map((award) => (
-                  <li class="flex items-start gap-3">
-                    <svg class="w-5 h-5 text-secondary-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M5 2a2 2 0 00-2 2v14l3.5-2 3.5 2 3.5-2 3.5 2V4a2 2 0 00-2-2H5zm4.707 3.707a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L8.414 9H10a3 3 0 013 3v1a1 1 0 102 0v-1a5 5 0 00-5-5H8.414l1.293-1.293z" clip-rule="evenodd"></path>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- Jeremy Wrathall - Cornish Lithium -->
+              <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <div class="flex gap-1 mb-4">
+                  {[1,2,3,4,5].map(() => (
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                     </svg>
-                    <div>
-                      <p class="font-medium text-gray-900">{award.title}</p>
-                      <p class="text-sm text-gray-600">{award.org} • {award.year}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-              <p class="text-sm text-gray-600 mt-4 italic">
-                "Recognising exceptional innovation, leadership, and vision in driving businesses internationally"
-              </p>
-            </div>
-          </div>
-          
-          <div class="bg-primary-50 rounded-2xl p-8">
-            <h3 class="text-xl font-semibold text-gray-900 mb-4">Areas of Expertise</h3>
-            <div class="grid md:grid-cols-2 gap-3">
-              {expertise.map((item) => (
-                <div class="flex items-center gap-2">
-                  <svg class="w-4 h-4 text-primary-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-gray-700">{item}</span>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Philosophy Section -->
-    <section class="section bg-gray-50">
-      <div class="container">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-gray-900 text-center mb-12">
-            My Approach to Workplace Wellbeing
-          </h2>
-          
-          <div class="prose prose-lg mx-auto text-gray-600">
-            <p class="lead">
-              I believe that workplace wellbeing isn't just about reducing sick days or 
-              improving productivity metrics—it's about creating environments where people 
-              can bring their whole selves to work and thrive.
-            </p>
-            
-            <p>
-              After 17 years working with organizations across every sector, I've seen 
-              firsthand how the right wellbeing strategy can transform not just individual 
-              lives, but entire company cultures. My approach combines cutting-edge 
-              psychological research with practical, implementable solutions that work 
-              in the real world.
-            </p>
-            
-            <p>
-              As someone who has navigated the challenges of leadership myself, I understand 
-              the pressures that executives and HR leaders face. That's why I focus on 
-              delivering solutions that are both compassionate and commercially viable—
-              because wellbeing initiatives that don't deliver ROI simply don't survive.
-            </p>
-            
-            <blockquote class="border-l-4 border-primary-500 pl-4 italic my-8">
-              "What truly sets Craig apart is his extensive knowledge, continued deep empathy 
-              and openness to speak from personal experience. His expertise in mental health 
-              support is unrivalled."
-              <cite class="block mt-2 text-sm not-italic">— Richard Sharpe, Director</cite>
-            </blockquote>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="section bg-white">
-      <div class="container">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-gray-900 text-center mb-12">
-            What Leaders Say
-          </h2>
-          
-          <div class="grid md:grid-cols-2 gap-8">
-            <div class="card">
-              <div class="flex gap-1 mb-4">
-                {[1,2,3,4,5].map(() => (
-                  <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                  </svg>
-                ))}
+                <p class="text-gray-600 mb-4 text-sm italic">
+                  "Cornish Lithium values the work that you do with supporting our staff in difficult times... I have always found you a thoughtful and compassionate person and therefore the ideal counsellor in troubled times."
+                </p>
+                <p class="font-semibold text-gray-900">Jeremy Wrathall</p>
+                <p class="text-sm text-gray-600">CEO, Cornish Lithium</p>
               </div>
-              <p class="text-gray-600 mb-4">
-                "Craig's professional focus on wellbeing leadership has been evident to all 
-                attending—not with a salesman's pitch, but through his natural affinity for 
-                the subject within his daily approach to all his activities."
-              </p>
-              <p class="font-semibold text-gray-900">Chris Saxby</p>
-              <p class="text-sm text-gray-600">IoD Cornwall Chair</p>
+              
+              <!-- Richard Sharpe -->
+              <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <div class="flex gap-1 mb-4">
+                  {[1,2,3,4,5].map(() => (
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                  ))}
+                </div>
+                <p class="text-gray-600 mb-4 text-sm italic">
+                  "His expertise in mental health support is unrivalled... Craig stands out as a highly skilled and dedicated Wellbeing practitioner."
+                </p>
+                <p class="font-semibold text-gray-900">Richard Sharpe</p>
+                <p class="text-sm text-gray-600">C-Suite Operational Board Leader</p>
+              </div>
+              
+              <!-- Chris Saxby -->
+              <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <div class="flex gap-1 mb-4">
+                  {[1,2,3,4,5].map(() => (
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                  ))}
+                </div>
+                <p class="text-gray-600 mb-4 text-sm italic">
+                  "Craig's professional focus on wellbeing leadership has been evident... through his natural affinity for the subject within his daily approach."
+                </p>
+                <p class="font-semibold text-gray-900">Chris Saxby</p>
+                <p class="text-sm text-gray-600">Executive & Non-Executive Leader</p>
+              </div>
+              
+              <!-- Nidal Ramini - Brown-Forman -->
+              <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <div class="flex gap-1 mb-4">
+                  {[1,2,3,4,5].map(() => (
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                  ))}
+                </div>
+                <p class="text-gray-600 mb-4 text-sm italic">
+                  "Craig delivered an informative, engaging and insightful session. I can't recommend Craig highly enough."
+                </p>
+                <p class="font-semibold text-gray-900">Nidal Ramini</p>
+                <p class="text-sm text-gray-600">Advocacy Director, Brown-Forman</p>
+              </div>
+              
+              <!-- Michael Redgewell - Edrington -->
+              <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <div class="flex gap-1 mb-4">
+                  {[1,2,3,4,5].map(() => (
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                  ))}
+                </div>
+                <p class="text-gray-600 mb-4 text-sm italic">
+                  "Craig has been a fantastic support... It is now an absolute pleasure to read the wonderful feedback he receives."
+                </p>
+                <p class="font-semibold text-gray-900">Michael Redgewell</p>
+                <p class="text-sm text-gray-600">Regional Development Manager, Edrington UK</p>
+              </div>
+              
+              <!-- Tim Etherington-Judge -->
+              <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <div class="flex gap-1 mb-4">
+                  {[1,2,3,4,5].map(() => (
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                  ))}
+                </div>
+                <p class="text-gray-600 mb-4 text-sm italic">
+                  "What sets him apart is not his encyclopedic knowledge... it's his empathy and ability to speak from first hand experience."
+                </p>
+                <p class="font-semibold text-gray-900">Tim Etherington-Judge</p>
+                <p class="text-sm text-gray-600">Founder, Healthy Hospo</p>
+              </div>
             </div>
             
-            <div class="card">
-              <div class="flex gap-1 mb-4">
-                {[1,2,3,4,5].map(() => (
-                  <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+            <!-- Client Logos -->
+            <div class="mt-12 pt-12 border-t border-gray-200">
+              <p class="text-center text-gray-600 mb-8">Trusted by leading organizations including:</p>
+              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-center max-w-5xl mx-auto">
+                <!-- Cornish Lithium -->
+                <div class="client-logo-container flex items-center justify-center h-24 px-4 grayscale hover:grayscale-0 transition-all duration-300">
+                  <img src="https://cornishlithium.com/_next/image?url=%2Flogo-white.png&w=640&q=75" 
+                       alt="Cornish Lithium" 
+                       class="max-h-14 w-auto filter invert opacity-70 hover:opacity-100"
+                       loading="lazy" />
+                </div>
+                
+                <!-- Suntory -->
+                <div class="client-logo-container flex items-center justify-center h-24 px-4 grayscale hover:grayscale-0 transition-all duration-300">
+                  <img src="https://www.suntory.com/sun_common/en/sun_navi/responsive/img/suntory_logo.svg" 
+                       alt="Suntory" 
+                       class="max-h-14 w-auto opacity-70 hover:opacity-100"
+                       loading="lazy" />
+                </div>
+                
+                <!-- Global Switch -->
+                <div class="client-logo-container flex items-center justify-center h-24 px-4 grayscale hover:grayscale-0 transition-all duration-300">
+                  <img src="https://www.globalswitch.com/wp-content/uploads/2024/11/Global_Switch_One_Line_Logotype_Wht_RGB.svg" 
+                       alt="Global Switch" 
+                       class="max-h-14 w-auto filter invert opacity-70 hover:opacity-100"
+                       loading="lazy" />
+                </div>
+                
+                <!-- Edrington -->
+                <div class="client-logo-container flex items-center justify-center h-24 px-4 grayscale hover:grayscale-0 transition-all duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 271 85" class="max-h-14 w-auto opacity-70 hover:opacity-100">
+                    <defs>
+                      <linearGradient id="edrington-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#8B7355;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
+                      </linearGradient>
+                    </defs>
+                    <g>
+                      <path d="M15.6,25.2h10.8v5.4H15.6v8.1h12.6v5.4H9.6V19.8h18.6v5.4H15.6V25.2z" fill="url(#edrington-gradient)"/>
+                      <path d="M44.4,19.8c8.1,0,13.5,5.4,13.5,12.3s-5.4,12.3-13.5,12.3H33.6V19.8H44.4z M44.4,38.7c4.5,0,7.2-2.7,7.2-6.6s-2.7-6.6-7.2-6.6h-4.8v13.2H44.4z" fill="url(#edrington-gradient)"/>
+                      <path d="M63.6,19.8h9.9c5.4,0,9,2.7,9,7.2c0,3.6-2.7,5.4-4.5,6.3l5.4,10.8h-6.3l-4.5-9h-3.6v9h-5.4V19.8z M73.5,30.6c1.8,0,3.6-0.9,3.6-2.7s-1.8-2.7-3.6-2.7h-4.5v5.4H73.5z" fill="url(#edrington-gradient)"/>
+                      <path d="M88.2,19.8h5.4v24.3h-5.4V19.8z" fill="url(#edrington-gradient)"/>
+                      <path d="M100.8,19.8h5.4l9,13.5V19.8h5.4v24.3h-5.4l-9-13.5v13.5h-5.4V19.8z" fill="url(#edrington-gradient)"/>
+                      <path d="M141,32.4h5.4v7.2c-2.7,3.6-6.3,5.4-10.8,5.4c-7.2,0-12.6-5.4-12.6-12.6s5.4-12.6,12.6-12.6c4.5,0,8.1,1.8,10.8,5.4l-3.6,3.6c-1.8-2.7-4.5-3.6-6.3-3.6c-4.5,0-7.2,3.6-7.2,7.2s2.7,7.2,7.2,7.2c1.8,0,3.6-0.9,4.5-1.8V32.4z" fill="url(#edrington-gradient)"/>
+                      <path d="M152.4,25.2h-6.3v-5.4h18v5.4h-6.3v19h-5.4V25.2z" fill="url(#edrington-gradient)"/>
+                      <path d="M168.6,32.4c0-7.2,5.4-12.6,12.6-12.6s12.6,5.4,12.6,12.6s-5.4,12.6-12.6,12.6S168.6,39.6,168.6,32.4z M188.4,32.4c0-4.5-2.7-7.2-7.2-7.2s-7.2,2.7-7.2,7.2s2.7,7.2,7.2,7.2S188.4,36.9,188.4,32.4z" fill="url(#edrington-gradient)"/>
+                      <path d="M199.8,19.8h5.4l9,13.5V19.8h5.4v24.3h-5.4l-9-13.5v13.5h-5.4V19.8z" fill="url(#edrington-gradient)"/>
+                      <rect x="9.6" y="54" width="210" height="1.8" fill="url(#edrington-gradient)"/>
+                      <text x="114.6" y="72" font-family="serif" font-size="10.8" fill="#8B7355">The Premium Spirits Company</text>
+                    </g>
                   </svg>
-                ))}
+                </div>
+                
+                <!-- Brown-Forman -->
+                <div class="client-logo-container flex items-center justify-center h-24 px-4 grayscale hover:grayscale-0 transition-all duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 243 38" class="max-h-14 w-auto opacity-70 hover:opacity-100">
+                    <g transform="translate(-21.955 -274.7)">
+                      <path d="M54.415,293.443c0,10.327-7.684,18.7-17.157,18.7S20.1,303.77,20.1,293.4c0-10.327,7.684-18.7,17.157-18.7,9.514.041,17.2,8.416,17.157,18.743" transform="translate(1.855)" fill="#a2674f"/>
+                      <path d="M76.5,294.2c0,1.057.163,4.513.2,4.96a3.378,3.378,0,0,0,.854,2.114,12.028,12.028,0,0,1,1.016,1.1,2.638,2.638,0,0,1,.569,1.789c0,.366-.122,10.815-.122,10.937H80c0-.407.122-10.53.122-10.937a4.084,4.084,0,0,0-.772-2.48,14.247,14.247,0,0,0-1.1-1.26,1.95,1.95,0,0,1-.488-1.342c-.041-.366-.2-3.74-.2-4.838H76.5Z" transform="translate(-31.614 -11.572)" fill="#fff"/>
+                      <path d="M41.943,294.141c0,1.057-.163,4.432-.2,4.838a1.876,1.876,0,0,1-.529,1.342,10.128,10.128,0,0,0-1.1,1.26,3.879,3.879,0,0,0-.813,2.48c0,.407.122,10.53.122,10.937H40.4c0-.081-.122-10.53-.122-10.937a2.733,2.733,0,0,1,.569-1.789,12.035,12.035,0,0,1,1.016-1.1,3.089,3.089,0,0,0,.854-2.114c.041-.447.2-3.9.2-4.96h-.976Z" transform="translate(-9.539 -11.512)" fill="#fff"/>
+                      <path d="M60.046,314.322c-.325-.041-1.423-.2-1.748-.244a.694.694,0,0,1-.61-.651c0-.285-.041-7.806-.081-9.189a3.912,3.912,0,0,1,1.586-2.805,3.182,3.182,0,0,0,.854-2.074c.041-.447.2-3.212.2-4.31V294.4h-6.3v.651c0,1.1.163,3.862.2,4.31A3.288,3.288,0,0,0,55,301.474c.976.976,1.545,1.626,1.545,2.846,0,1.179-.081,8.863-.081,9.189a.734.734,0,0,1-.61.651c-.285.041-1.464.2-1.789.244-.285.041-.569.122-.569.447s.244.407.569.407h5.9c.325,0,.529-.081.569-.407.081-.407-.2-.488-.488-.529" transform="translate(-17.965 -11.691)" fill="#fff"/>
+                      <path d="M129.114,310.958c0-3.171,0-3.74-.041-4.391-.041-.691-.2-1.057-.894-1.179a4.192,4.192,0,0,0-.813-.081c-.244,0-.366-.041-.366-.2s.163-.2.447-.2c1.1,0,2.4.081,2.846.081,1.016,0,1.83-.041,2.521-.041,3.781,0,4.432,2.033,4.432,3.131a4.6,4.6,0,0,1-2.114,3.659c1.708.569,3.781,2.074,3.781,4.513,0,2.236-1.748,4.554-5.57,4.513-.488,0-2.4-.122-3.009-.122-.488,0-1.789.041-2.6.041-.285,0-.407-.081-.407-.2s.081-.163.325-.163a3.029,3.029,0,0,0,.732-.081c.407-.081.529-.529.61-1.138a42.452,42.452,0,0,0,.122-4.432Zm2.48.325a.234.234,0,0,0,.163.244,4.766,4.766,0,0,0,.976.081,2.081,2.081,0,0,0,1.5-.407,2.75,2.75,0,0,0,.854-2.2c0-1.382-.813-3.212-2.6-3.212a3.506,3.506,0,0,0-.691.041c-.163.041-.2.122-.2.366Zm2.765,1.667a2.844,2.844,0,0,0-1.708-.488,6.893,6.893,0,0,0-.894-.041c-.081,0-.122.041-.122.163v4.92c0,1.382.041,1.708.732,1.992a3.519,3.519,0,0,0,1.5.244,2.412,2.412,0,0,0,2.521-2.643,5.05,5.05,0,0,0-2.033-4.147" transform="translate(-63.437 -17.921)" fill="#776e64" opacity="0.999"/>
+                      <path d="M163.514,310.958c0-3.171,0-3.74-.041-4.391-.041-.691-.2-1.057-.894-1.179-.163-.041-.529-.041-.813-.081-.244,0-.366-.041-.366-.2s.163-.2.447-.2c1.1,0,2.4.081,2.846.081.691,0,2.277-.041,2.927-.041a6.581,6.581,0,0,1,3.822.894,3.678,3.678,0,0,1,1.423,2.846c0,1.545-.651,2.968-2.765,4.676,1.83,2.318,3.293,4.188,4.513,5.489a4.346,4.346,0,0,0,2.317,1.423,3.8,3.8,0,0,0,.569.081c.163,0,.244.081.244.163,0,.163-.163.2-.407.2h-1.992a4.357,4.357,0,0,1-2.236-.407,10.484,10.484,0,0,1-2.846-3.049c-.813-1.138-1.789-2.561-2.074-2.887a.5.5,0,0,0-.366-.163l-1.83-.041c-.122,0-.163.041-.163.163v.285c0,1.952,0,3.578.081,4.472.041.61.2,1.057.813,1.138a10.141,10.141,0,0,0,1.016.081c.163,0,.244.081.244.163,0,.163-.163.2-.407.2-1.22,0-2.765-.081-3.049-.081-.407,0-1.708.041-2.521.041-.285,0-.407-.081-.407-.2s.081-.163.325-.163a3.029,3.029,0,0,0,.732-.081c.407-.081.529-.529.61-1.138a42.035,42.035,0,0,0,.122-4.432Zm2.439,1.667c0,.244.041.325.2.366a4.991,4.991,0,0,0,1.586.2,1.985,1.985,0,0,0,1.464-.366,3.712,3.712,0,0,0,1.22-3.131c0-2.968-1.952-3.822-3.171-3.822a5.965,5.965,0,0,0-1.1.081c-.163.041-.2.122-.2.285Z" transform="translate(-83.851 -17.921)" fill="#776e64" opacity="0.999"/>
+                      <path d="M199.6,312.431c0-3.578,2.358-8.172,8.619-8.131,5.163,0,8.416,3.009,8.416,7.806a8.239,8.239,0,0,1-8.619,8.538,8,8,0,0,1-8.416-8.213m14.108.407c0-4.676-2.683-7.562-6.1-7.562-2.4,0-5.123,1.342-5.123,6.505,0,4.31,2.4,7.766,6.383,7.766,1.464.041,4.838-.691,4.838-6.708" transform="translate(-106.52 -17.565)" fill="#776e64" opacity="0.999"/>
+                      <path d="M244.611,307.014a2.944,2.944,0,0,0-.772-1.464,1.7,1.7,0,0,0-.813-.2c-.2,0-.325-.041-.325-.2s.163-.2.447-.2c1.1,0,2.236.081,2.4.081.2,0,1.1-.081,2.317-.081.285,0,.447.081.447.2,0,.163-.163.2-.366.2a1.2,1.2,0,0,0-.529.081c-.2.081-.244.244-.244.447a13.4,13.4,0,0,0,.447,1.911c.366,1.382,2.277,7.684,2.643,8.823h.081l4.025-10.855c.244-.569.366-.732.529-.732.244,0,.325.325.61.976l4.31,10.449h.081c.366-1.382,2.033-6.871,2.765-9.31a3.79,3.79,0,0,0,.2-1.22c0-.325-.2-.61-1.016-.61-.2,0-.366-.081-.366-.2,0-.163.163-.2.488-.2,1.1,0,1.992.081,2.155.081s1.057-.081,1.708-.081c.244,0,.366.041.366.163,0,.163-.122.2-.285.2a2.5,2.5,0,0,0-.732.122c-.488.2-.732,1.016-1.179,2.2-.976,2.6-3.171,9.229-4.188,12.36-.244.732-.325.976-.61.976-.2,0-.325-.244-.651-1.016l-4.31-10.408h-.041c-.407,1.057-3.171,8.416-4.066,10.327-.407.854-.488,1.1-.732,1.1-.2,0-.325-.244-.488-.773Z" transform="translate(-132.097 -17.922)" fill="#776e64" opacity="0.999"/>
+                      <path d="M303.837,317.514c.041,1.626.325,2.155.732,2.318a3.424,3.424,0,0,0,1.1.163c.244,0,.366.041.366.163,0,.163-.2.2-.488.2-1.342,0-2.2-.081-2.561-.081-.2,0-1.179.041-2.236.041-.285,0-.447-.041-.447-.2,0-.122.122-.163.325-.163a3.64,3.64,0,0,0,.935-.081c.529-.163.61-.772.651-2.561l.2-12.319c0-.407.081-.691.285-.691.244,0,.407.285.772.651.244.285,3.415,3.659,6.424,6.668,1.423,1.423,4.228,4.432,4.554,4.757h.122l-.2-9.351c-.041-1.26-.2-1.667-.691-1.87a3.5,3.5,0,0,0-1.1-.122c-.244,0-.325-.081-.325-.2,0-.163.244-.2.529-.2,1.1,0,2.074.081,2.521.081.244,0,1.016-.081,2.033-.041.285,0,.488.041.488.2,0,.122-.122.2-.366.2a1.685,1.685,0,0,0-.61.081c-.569.163-.732.61-.773,1.748l-.244,13.132c0,.447-.081.651-.285.651-.244,0-.488-.244-.691-.447-1.3-1.26-3.984-3.984-6.139-6.139-2.277-2.236-4.554-4.838-4.96-5.245h-.081Z" transform="translate(-166.278 -17.565)" fill="#776e64" opacity="0.999"/>
+                      <path d="M349.6,322.874c.773-1.5,1.016-1.667,1.586-1.667.651,0,1.382.081,2.805.081,1.5,0,1.586,0,1.87-.488l.285.2c-.772,1.545-.854,1.667-1.3,1.667-1.342,0-2.927-.041-4.147-.041a.693.693,0,0,0-.772.447Z" transform="translate(-195.534 -27.357)" fill="#776e64" opacity="0.999"/>
+                      <path d="M377.116,314.639c0,1.992,0,3.578.081,4.432.081.61.2,1.057.813,1.138a8.587,8.587,0,0,0,1.057.081c.285,0,.366.081.366.163,0,.163-.163.2-.447.2-1.3,0-2.643-.081-3.171-.081s-1.87.041-2.643.041c-.285,0-.447-.041-.447-.2,0-.122.081-.163.325-.163a3.027,3.027,0,0,0,.732-.081c.407-.081.529-.529.61-1.138a41.618,41.618,0,0,0,.122-4.432v-3.659c0-3.171,0-3.74-.041-4.391-.041-.691-.2-1.057-.894-1.179a4.192,4.192,0,0,0-.813-.081c-.2,0-.366-.041-.366-.163,0-.163.163-.2.488-.2,1.1,0,2.4.081,3.009.081h5.489a2.4,2.4,0,0,0,.854-.081,1.675,1.675,0,0,1,.325-.122.186.186,0,0,1,.163.2c0,.163-.122.407-.163.935-.041.2-.081,1.423-.122,1.667-.041.163-.081.285-.2.285-.163,0-.2-.122-.2-.325a1.992,1.992,0,0,0-.122-.772,1.481,1.481,0,0,0-1.382-.61l-3.212-.081c-.122,0-.2.081-.2.285v5.2c0,.122.041.2.163.2h2.643a6.6,6.6,0,0,0,.935-.041,1.216,1.216,0,0,0,.894-.366c.122-.122.163-.2.285-.2.081,0,.122.081.122.2s-.122.651-.163,1.3c-.041.407-.081,1.382-.081,1.5,0,.2,0,.407-.2.407-.122,0-.163-.163-.163-.285a2.235,2.235,0,0,0-.122-.651,1.23,1.23,0,0,0-1.057-.732c-.529-.081-2.724-.081-3.09-.081-.122,0-.163.041-.163.2Z" transform="translate(-209.065 -17.862)" fill="#776e64" opacity="0.999"/>
+                      <path d="M403,312.631c0-3.578,2.358-8.172,8.619-8.131,5.163,0,8.416,3.009,8.416,7.806a8.239,8.239,0,0,1-8.619,8.538C405.4,320.8,403,316.331,403,312.631m14.067.407c0-4.676-2.683-7.562-6.1-7.562-2.4,0-5.123,1.342-5.123,6.505,0,4.35,2.4,7.766,6.383,7.766,1.464,0,4.838-.691,4.838-6.708" transform="translate(-227.223 -17.684)" fill="#776e64" opacity="0.999"/>
+                      <path d="M451.614,311.258c0-3.171,0-3.74-.041-4.391-.041-.691-.2-1.057-.895-1.179a4.2,4.2,0,0,0-.813-.081c-.244,0-.366-.041-.366-.2s.163-.2.447-.2c1.1,0,2.4.081,2.846.081.691,0,2.277-.081,2.927-.041a6.581,6.581,0,0,1,3.822.895,3.678,3.678,0,0,1,1.423,2.846c0,1.545-.651,2.968-2.765,4.676,1.87,2.317,3.293,4.188,4.513,5.489a4.346,4.346,0,0,0,2.318,1.423,3.787,3.787,0,0,0,.569.081c.163,0,.244.081.244.163,0,.163-.163.2-.407.2h-1.992a4.358,4.358,0,0,1-2.236-.407,10.484,10.484,0,0,1-2.846-3.049c-.813-1.138-1.789-2.561-2.074-2.887a.5.5,0,0,0-.366-.163l-1.789-.041c-.122,0-.163.041-.163.163v.285c0,1.952,0,3.578.081,4.472.081.61.2,1.057.813,1.138a10.151,10.151,0,0,0,1.016.081c.163,0,.244.081.244.163,0,.163-.163.2-.407.2-1.22,0-2.765-.081-3.049-.081-.407,0-1.708.041-2.521.041-.285,0-.407-.081-.407-.2s.081-.163.325-.163a3.027,3.027,0,0,0,.732-.081c.407-.081.529-.529.61-1.138a42.045,42.045,0,0,0,.122-4.432Zm2.48,1.626c0,.244.041.325.2.366a4.991,4.991,0,0,0,1.586.2,1.985,1.985,0,0,0,1.464-.366,3.712,3.712,0,0,0,1.22-3.131c0-2.968-1.952-3.822-3.171-3.822a5.966,5.966,0,0,0-1.1.081c-.163.041-.2.122-.2.285Z" transform="translate(-254.818 -18.1)" fill="#776e64" opacity="0.999"/>
+                      <path d="M489.3,304.729c.081-.366.2-.529.366-.529s.285.122.569.651l5.692,11.75,5.651-11.872c.163-.325.285-.488.447-.488.2,0,.325.2.366.651l1.87,12.848c.2,1.3.407,1.911,1.016,2.114a3.714,3.714,0,0,0,1.3.2c.2,0,.325.041.325.163,0,.163-.244.244-.529.244-.529,0-3.375-.081-4.228-.122-.488-.041-.61-.122-.61-.244s.081-.163.244-.244c.122-.041.2-.325.122-.894l-1.26-9.148h-.081l-4.554,9.351c-.488.976-.569,1.179-.772,1.179s-.407-.407-.732-1.057c-.488-.976-2.155-4.147-2.4-4.716-.2-.447-1.423-3.049-2.155-4.635h-.081l-1.1,8.294a8.6,8.6,0,0,0-.081.976c0,.407.285.569.61.651a4.2,4.2,0,0,0,.894.122c.163,0,.325.041.325.163,0,.2-.2.244-.488.244-.894,0-1.83-.081-2.2-.081-.407,0-1.382.081-2.074.041-.2,0-.366-.041-.366-.244,0-.122.122-.163.325-.163a1.918,1.918,0,0,0,.61-.081c.569-.122.732-.935.854-1.626Z" transform="translate(-276.122 -17.506)" fill="#776e64" opacity="0.999"/>
+                      <path d="M540.87,314.815c-.122,0-.163.041-.2.163l-1.138,2.968a4.36,4.36,0,0,0-.325,1.26c0,.366.2.651.854.651h.325c.244,0,.325.041.325.163,0,.163-.122.2-.366.2-.651,0-1.545-.081-2.2-.081-.244,0-1.382.041-2.439.041-.285,0-.407-.041-.407-.2,0-.122.081-.163.244-.163.2,0,.488-.041.65-.041.976-.122,1.342-.813,1.789-1.87l5.245-13.051c.244-.61.366-.854.569-.854s.325.2.529.651c.488,1.138,3.822,9.636,5.163,12.807.773,1.87,1.382,2.155,1.83,2.277a3.341,3.341,0,0,0,.854.081c.163,0,.285.041.285.163,0,.163-.2.2-.976.2-.732,0-2.277,0-3.944-.041-.366-.041-.61-.041-.61-.163s.081-.163.285-.2a.36.36,0,0,0,.2-.488l-1.667-4.31a.207.207,0,0,0-.2-.163Zm4.269-1.016c.122,0,.122-.081.122-.122l-1.87-5.123c-.041-.081-.041-.2-.122-.2s-.122.122-.122.2l-1.911,5.123c0,.081,0,.163.081.163Z" transform="translate(-305.734 -17.387)" fill="#776e64" opacity="0.999"/>
+                      <path d="M580.737,317.754c.041,1.626.325,2.155.732,2.317a3.424,3.424,0,0,0,1.1.163c.244,0,.366.041.366.163,0,.163-.2.2-.488.2-1.342,0-2.2-.081-2.561-.081-.2,0-1.179.081-2.236.041-.285,0-.447-.041-.447-.2,0-.122.122-.163.325-.163a3.69,3.69,0,0,0,.935-.122c.529-.163.61-.772.651-2.561l.2-12.319c0-.407.081-.691.285-.691.244,0,.407.285.773.651.244.285,3.415,3.659,6.424,6.668,1.423,1.423,4.228,4.432,4.594,4.757h.081l-.2-9.351c-.041-1.26-.2-1.667-.691-1.87a3.5,3.5,0,0,0-1.1-.122c-.244,0-.325-.081-.325-.2,0-.163.244-.2.529-.2,1.1,0,2.073.081,2.521.081.244,0,1.016-.081,2.033-.041.285,0,.488.041.488.2,0,.122-.122.2-.366.2a1.685,1.685,0,0,0-.61.081c-.569.163-.732.61-.772,1.789l-.244,13.132c0,.447-.081.651-.285.651-.244,0-.488-.244-.691-.447-1.3-1.26-3.984-3.984-6.139-6.139-2.277-2.236-4.594-4.838-4.96-5.245h-.081Z" transform="translate(-330.599 -17.684)" fill="#776e64" opacity="0.999"/>
+                    </g>
+                  </svg>
+                </div>
+                
+                <!-- Soho House -->
+                <div class="client-logo-container flex items-center justify-center h-24 px-4 grayscale hover:grayscale-0 transition-all duration-300">
+                  <svg width="50" height="50" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" class="opacity-70 hover:opacity-100">
+                    <path d="M29 10.3335L1 10.3335" stroke="#374151" stroke-width="1.5"></path>
+                    <path d="M29 19.6665L1 19.6665" stroke="#374151" stroke-width="1.5"></path>
+                    <path d="M19.668 29L19.668 0.999997" stroke="#374151" stroke-width="1.5"></path>
+                    <path d="M10.332 29L10.332 0.999997" stroke="#374151" stroke-width="1.5"></path>
+                    <rect x="29" y="1" width="28" height="28" transform="rotate(90 29 1)" stroke="#374151" stroke-width="1.5"></rect>
+                  </svg>
+                </div>
+                
+                <!-- Healthy Hospo -->
+                <div class="client-logo-container flex items-center justify-center h-24 px-4 grayscale hover:grayscale-0 transition-all duration-300">
+                  <img src="https://lwfiles.mycourse.app/healthyhospo-public/4d784ebf1c1a81325ddf1420332551a7.png" 
+                       alt="Healthy Hospo" 
+                       class="max-h-14 w-auto opacity-70 hover:opacity-100"
+                       loading="lazy" />
+                </div>
+                
+                <!-- Furniss of Cornwall -->
+                <div class="client-logo-container flex items-center justify-center h-24 px-4 grayscale hover:grayscale-0 transition-all duration-300">
+                  <img src="https://www.furniss-foods.co.uk/wp-content/uploads/2021/07/Furniss-logo.png" 
+                       alt="Furniss of Cornwall" 
+                       class="max-h-14 w-auto opacity-70 hover:opacity-100"
+                       loading="lazy" />
+                </div>
+                
+                <!-- Book of Beasties -->
+                <div class="client-logo-container flex items-center justify-center h-24 px-4 grayscale hover:grayscale-0 transition-all duration-300">
+                  <img src="https://cdn.prod.website-files.com/5ef9cd4c902e8cf6317a66c4/650fc36ca960e65849eb385a_Book%20Beasties%20Logo.svg" 
+                       alt="Book of Beasties" 
+                       class="max-h-14 w-auto opacity-70 hover:opacity-100"
+                       loading="lazy" />
+                </div>
               </div>
-              <p class="text-gray-600 mb-4">
-                "In a fragmented field where experience, skills and qualifications vary, 
-                Craig stands out as a highly skilled and dedicated Wellbeing practitioner."
-              </p>
-              <p class="font-semibold text-gray-900">Richard Sharpe</p>
-              <p class="text-sm text-gray-600">Executive Director</p>
             </div>
           </div>
         </div>
+      </section>
+    </div>
+    
+    <!-- Final Divider before CTA -->
+    <div class="relative py-8 bg-gradient-to-b from-white to-primary-600">
+      <div class="container">
+        <div class="w-24 h-1 bg-white/50 mx-auto"></div>
       </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section id="assessment" class="section bg-gradient-to-br from-primary-50 to-secondary-50">
+    </div>
+    
+    <!-- Final CTA Section -->
+    <section id="assessment" class="relative py-20 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white">
       <div class="container">
         <div class="max-w-3xl mx-auto text-center">
-          <h2 class="text-gray-900 mb-6">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Transform Your Workplace?
           </h2>
-          <p class="text-xl text-gray-600 mb-8">
+          <p class="text-lg text-primary-100 mb-8">
             Let's discuss how we can work together to create a thriving culture 
             where your people and business flourish.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/#assessment" class="btn-primary">
-              Get Your Free Assessment
+            <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-primary-900 bg-white hover:bg-gray-100 rounded-md transition-colors duration-200 shadow-lg">
+              Start Your Assessment
             </a>
-            <a href="mailto:craig.fearn@lighthousementoring.co.uk" class="btn-outline">
+            <a href="mailto:craig.fearn@lighthousementoring.co.uk" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-transparent border-2 border-white hover:bg-white hover:text-primary-900 rounded-md transition-colors duration-200">
               Email Craig Directly
             </a>
           </div>
@@ -282,3 +661,70 @@ const expertise = [
   </main>
   <Footer />
 </BaseLayout>
+
+<script>
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+  // Intersection Observer for fade-in animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-fade-in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observe all sections and cards
+  document.querySelectorAll('section, .credential-card, .testimonial-card, .award-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    observer.observe(el);
+  });
+
+  // Add CSS for animations
+  const style = document.createElement('style');
+  style.textContent = `
+    .animate-fade-in {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Logo hover effects */
+    .client-logo-container {
+      transition: all 0.3s ease;
+    }
+    
+    .client-logo-container:hover {
+      transform: translateY(-5px);
+    }
+  `;
+  document.head.appendChild(style);
+</script>

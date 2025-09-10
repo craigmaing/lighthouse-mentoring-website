@@ -1,64 +1,129 @@
 ---
+import { 
+  Zap, 
+  Star, 
+  TrendingUp, 
+  CheckCircle2,
+  Users,
+  Clock,
+  Award,
+  ArrowRight,
+  Sparkles
+} from 'lucide-astro';
+
 const packages = [
   {
     name: "Quick Pulse Check",
-    price: "From £750",
-    duration: "1-2 weeks • Quick temperature check",
+    tagline: "Fast insights",
+    price: "750",
+    pricePrefix: "From £",
+    period: "",
+    duration: "1-2 weeks",
+    subtitle: "Quick temperature check",
     features: [
-      "Online employee survey",
-      "Key metrics analysis",
-      "Top 3 priorities identified",
-      "Summary report"
+      { text: "Online employee survey", highlight: false },
+      { text: "Key metrics analysis", highlight: false },
+      { text: "Top 3 priorities identified", highlight: true },
+      { text: "Summary report", highlight: false }
     ],
     bestFor: "Teams of 10-30",
-    icon: "zap",
-    cta: "Learn More",
+    icon: Zap,
+    cta: "Get Started",
+    ctaIcon: true,
     popular: false,
-    gradient: "from-blue-500 to-blue-600"
+    savings: null,
+    gradient: "from-primary-400 to-primary-500",
+    iconBg: "bg-primary-100",
+    iconColor: "text-primary-600",
+    borderColor: "border-primary-200",
+    hoverShadow: "hover:shadow-primary-200/50"
   },
   {
     name: "Comprehensive Audit",
-    price: "From £2,500",
-    duration: "3-4 weeks • Full assessment",
+    tagline: "Most complete",
+    price: "2,500",
+    pricePrefix: "From £",
+    period: "",
+    duration: "3-4 weeks",
+    subtitle: "Full assessment",
     features: [
-      "Complete wellbeing analysis",
-      "Leadership interviews",
-      "Detailed benchmarking",
-      "Executive presentation",
-      "Prioritized action plan",
-      "90-day implementation support"
+      { text: "Complete wellbeing analysis", highlight: false },
+      { text: "Leadership interviews", highlight: false },
+      { text: "Detailed benchmarking", highlight: true },
+      { text: "Executive presentation", highlight: false },
+      { text: "Prioritized action plan", highlight: true },
+      { text: "90-day implementation support", highlight: true }
     ],
     bestFor: "Teams of 30-100",
-    icon: "star",
-    cta: "Most Popular",
+    icon: Star,
+    cta: "Choose This Package",
+    ctaIcon: true,
     popular: true,
-    gradient: "from-primary-500 to-primary-600"
+    savings: "Save £500 vs separate audits",
+    gradient: "from-primary-500 to-primary-600",
+    iconBg: "bg-gradient-to-br from-primary-100 to-accent-100",
+    iconColor: "text-primary-600",
+    borderColor: "border-primary-300",
+    hoverShadow: "hover:shadow-primary-300/60"
   },
   {
     name: "Quarterly Package",
-    price: "From £6,000/year",
-    duration: "Ongoing • Continuous improvement",
+    tagline: "Best value",
+    price: "6,000",
+    pricePrefix: "From £",
+    period: "/year",
+    duration: "Ongoing",
+    subtitle: "Continuous improvement",
     features: [
-      "Quarterly assessments",
-      "Progress tracking dashboard",
-      "Trend analysis reports",
-      "Year-on-year comparisons",
-      "Monthly check-ins"
+      { text: "Quarterly assessments", highlight: false },
+      { text: "Progress tracking dashboard", highlight: true },
+      { text: "Trend analysis reports", highlight: false },
+      { text: "Year-on-year comparisons", highlight: true },
+      { text: "Monthly check-ins", highlight: false },
+      { text: "Priority support included", highlight: true }
     ],
     bestFor: "Teams of 50-250",
-    icon: "trending",
+    icon: TrendingUp,
     cta: "Learn More",
+    ctaIcon: true,
     popular: false,
-    gradient: "from-green-500 to-green-600"
+    savings: "Save £2,000 annually",
+    gradient: "from-accent-400 to-accent-500",
+    iconBg: "bg-accent-100",
+    iconColor: "text-accent-600",
+    borderColor: "border-accent-200",
+    hoverShadow: "hover:shadow-accent-200/50"
   }
+];
+
+const comparisonFeatures = [
+  { feature: "Employee Survey", quick: true, comprehensive: true, quarterly: true },
+  { feature: "AI-Powered Analysis", quick: false, comprehensive: true, quarterly: true },
+  { feature: "Leadership Interviews", quick: false, comprehensive: true, quarterly: true },
+  { feature: "Industry Benchmarking", quick: false, comprehensive: true, quarterly: true },
+  { feature: "Action Plan", quick: "Basic", comprehensive: true, quarterly: true },
+  { feature: "Executive Presentation", quick: false, comprehensive: true, quarterly: true },
+  { feature: "Progress Tracking", quick: false, comprehensive: false, quarterly: true },
+  { feature: "Ongoing Support", quick: false, comprehensive: "90 days", quarterly: "Unlimited" }
 ];
 ---
 
-<section id="service-comparison" class="section bg-white">
-  <div class="container">
-    <div class="text-center mb-12">
-      <h2 class="text-gray-900 mb-4">Choose Your Workplace Wellbeing Audit Package</h2>
-      <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-4">
+<section id="service-comparison" class="section relative bg-gradient-to-br from-white via-primary-50/30 to-accent-50/20 overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-[0.03]">
+    <div class="absolute top-1/4 -left-1/4 w-[600px] h-[600px] bg-primary-500 rounded-full filter blur-3xl"></div>
+    <div class="absolute bottom-1/4 -right-1/4 w-[600px] h-[600px] bg-accent-500 rounded-full filter blur-3xl"></div>
+  </div>
+  
+  <!-- Decorative Grid -->
+  <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" xmlns="http://www.w3.org/2000/svg"%3E%3Cdefs%3E%3Cpattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"%3E%3Cpath d="M 60 0 L 0 0 0 60" fill="none" stroke="%23e5e7eb" stroke-width="0.5"/%3E%3C/pattern%3E%3C/defs%3E%3Crect width="100%25" height="100%25" fill="url(%23grid)"/%3E%3C/svg%3E')] opacity-30"></div>
+  
+  <div class="container relative z-10">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+        Choose Your <span class="text-gradient bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">Workplace Wellbeing Audit</span> Package
+      </h2>
+      <p class="text-base md:text-lg text-gray-700 max-w-3xl mx-auto mb-4 leading-relaxed">
         Flexible employee wellness assessment packages designed for UK SMEs at every stage of their 
         wellbeing journey. From quick pulse surveys to comprehensive workplace mental health audits, 
         we tailor our approach to your needs.
@@ -69,88 +134,294 @@ const packages = [
         industry standards, and actionable recommendations to improve employee satisfaction, reduce burnout, 
         and boost productivity.
       </p>
+      
+      <!-- Value Proposition Pills -->
+      <div class="flex flex-wrap justify-center gap-3 mt-8">
+        <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200">
+          <CheckCircle2 class="w-4 h-4 text-green-500" />
+          <span class="text-sm font-medium text-gray-700">No Hidden Fees</span>
+        </div>
+        <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200">
+          <Clock class="w-4 h-4 text-blue-500" />
+          <span class="text-sm font-medium text-gray-700">Fast Turnaround</span>
+        </div>
+        <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200">
+          <Award class="w-4 h-4 text-purple-500" />
+          <span class="text-sm font-medium text-gray-700">Industry Certified</span>
+        </div>
+      </div>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      {packages.map((pkg) => (
-        <div class={`relative ${pkg.popular ? 'transform scale-105' : ''}`}>
+    <!-- Pricing Cards -->
+    <div class="grid lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto mb-16">
+      {packages.map((pkg, index) => (
+        <div class={`relative pricing-card ${pkg.popular ? 'lg:transform lg:scale-105 z-20' : 'z-10'}`} style={`animation-delay: ${index * 0.1}s`}>
+          {/* Popular Badge */}
           {pkg.popular && (
-            <div class="absolute -top-4 left-0 right-0 text-center">
-              <span class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block">
-                Most Popular Choice
-              </span>
+            <div class="absolute -top-5 left-0 right-0 text-center z-30">
+              <div class="inline-flex items-center gap-2 bg-gradient-to-r from-primary-600 to-accent-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                <Sparkles class="w-4 h-4" />
+                <span>MOST POPULAR</span>
+                <Sparkles class="w-4 h-4" />
+              </div>
             </div>
           )}
           
-          <div class={`bg-white rounded-2xl p-8 h-full ${
+          {/* Card */}
+          <div class={`relative bg-white rounded-3xl h-full overflow-hidden group transition-all duration-300 ${
             pkg.popular 
-              ? 'shadow-2xl border-2 border-primary-200' 
-              : 'shadow-lg hover:shadow-xl border border-gray-200'
-          } transition-all duration-300 flex flex-col`}>
-            {/* Package Icon */}
-            <div class={`w-12 h-12 bg-gradient-to-br ${pkg.gradient} rounded-lg flex items-center justify-center mb-4`}>
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {pkg.icon === 'zap' && (
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              ? 'shadow-2xl ring-2 ring-primary-400 ring-opacity-50' 
+              : 'shadow-xl hover:shadow-2xl'
+          } ${pkg.hoverShadow}`}>
+            
+            {/* Card Header Gradient */}
+            <div class={`absolute top-0 left-0 right-0 h-32 bg-gradient-to-br ${pkg.gradient} opacity-5`}></div>
+            
+            {/* Card Content */}
+            <div class="relative p-8 flex flex-col h-full">
+              {/* Icon & Tagline */}
+              <div class="flex items-start justify-between mb-6">
+                <div class={`w-14 h-14 ${pkg.iconBg} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm`}>
+                  <pkg.icon class={`w-7 h-7 ${pkg.iconColor}`} />
+                </div>
+                {pkg.tagline && (
+                  <span class={`text-xs font-bold uppercase tracking-wider ${pkg.iconColor} bg-primary-50 px-3 py-1 rounded-full`}>
+                    {pkg.tagline}
+                  </span>
                 )}
-                {pkg.icon === 'star' && (
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+              </div>
+              
+              {/* Package Name & Price */}
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">{pkg.name}</h3>
+              
+              <div class="mb-6">
+                <div class="flex items-baseline gap-1">
+                  <span class="text-sm text-gray-600">{pkg.pricePrefix}</span>
+                  <span class="text-4xl font-bold bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent">{pkg.price}</span>
+                  {pkg.period && <span class="text-lg text-gray-600 font-medium">{pkg.period}</span>}
+                </div>
+                {pkg.savings && (
+                  <div class="mt-2 inline-flex items-center gap-1 px-3 py-1 bg-green-50 text-green-700 text-xs font-semibold rounded-full">
+                    <Sparkles class="w-3 h-3" />
+                    <span>{pkg.savings}</span>
+                  </div>
                 )}
-                {pkg.icon === 'trending' && (
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+              </div>
+              
+              {/* Duration & Best For */}
+              <div class="grid grid-cols-2 gap-4 mb-6 pb-6 border-b border-gray-100">
+                <div>
+                  <div class="flex items-center gap-1 text-xs text-gray-500 mb-1">
+                    <Clock class="w-3 h-3" />
+                    <span class="font-medium">TIMELINE</span>
+                  </div>
+                  <p class="text-sm font-semibold text-gray-900">{pkg.duration}</p>
+                  <p class="text-xs text-gray-600">{pkg.subtitle}</p>
+                </div>
+                <div>
+                  <div class="flex items-center gap-1 text-xs text-gray-500 mb-1">
+                    <Users class="w-3 h-3" />
+                    <span class="font-medium">BEST FOR</span>
+                  </div>
+                  <p class="text-sm font-semibold text-gray-900">{pkg.bestFor}</p>
+                </div>
+              </div>
+              
+              {/* Features List */}
+              <ul class="space-y-3 mb-8 flex-grow">
+                {pkg.features.map((feature) => (
+                  <li class="flex items-start gap-3">
+                    <div class={`mt-0.5 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${
+                      feature.highlight 
+                        ? 'bg-primary-100' 
+                        : 'bg-gray-100'
+                    }`}>
+                      <CheckCircle2 class={`w-4 h-4 ${
+                        feature.highlight 
+                          ? 'text-primary-600' 
+                          : 'text-gray-400'
+                      }`} />
+                    </div>
+                    <span class={`text-sm ${
+                      feature.highlight 
+                        ? 'text-gray-900 font-medium' 
+                        : 'text-gray-600'
+                    }`}>{feature.text}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              {/* CTA Button */}
+              <a 
+                href="#assessment" 
+                class={`group/btn w-full inline-flex items-center justify-center px-6 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-[1.02] ${
+                  pkg.popular 
+                    ? 'bg-gradient-to-r from-primary-600 to-primary-700 text-white hover:from-primary-700 hover:to-primary-800 shadow-lg hover:shadow-xl' 
+                    : 'bg-gray-50 text-gray-900 hover:bg-gray-100 border-2 border-gray-200'
+                }`}
+              >
+                <span>{pkg.cta}</span>
+                {pkg.ctaIcon && (
+                  <ArrowRight class="ml-2 w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                 )}
-              </svg>
+              </a>
             </div>
-            
-            <h3 class="text-xl font-bold text-gray-900 mb-2">{pkg.name}</h3>
-            <p class="text-3xl font-bold text-primary-600 mb-1">{pkg.price}</p>
-            <p class="text-xs text-gray-500 font-medium mb-2">Best for: {pkg.bestFor}</p>
-            <p class="text-sm text-gray-600 mb-6">{pkg.duration}</p>
-            
-            <ul class="space-y-3 mb-8 flex-grow">
-              {pkg.features.map((feature) => (
-                <li class="flex items-start gap-3">
-                  <svg class={`w-5 h-5 ${pkg.popular ? 'text-primary-500' : 'text-green-500'} mt-0.5 flex-shrink-0`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span class="text-gray-700 text-sm">{feature}</span>
-                </li>
-              ))}
-            </ul>
-            
-            <a href="/services" class={`w-full inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 ${
-              pkg.popular 
-                ? 'bg-gradient-to-r from-primary-600 to-primary-700 text-white hover:from-primary-700 hover:to-primary-800 shadow-lg' 
-                : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-            }`}>
-              {pkg.cta}
-              {pkg.popular && (
-                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                </svg>
-              )}
-            </a>
           </div>
         </div>
       ))}
     </div>
 
-    <div class="mt-12 text-center">
-      <h3 class="text-xl font-bold text-gray-900 mb-4">
-        Which Employee Wellbeing Assessment is Right for Your Organisation?
-      </h3>
-      <p class="text-gray-600 max-w-3xl mx-auto mb-6">
-        Every workplace faces unique wellbeing challenges. Whether you're dealing with high staff turnover, 
-        declining engagement scores, or rising absence rates, our workplace wellness evaluation experts can 
-        help identify the root causes. Our employee burnout assessments and workplace stress audits provide 
-        the insights needed to create a healthier, more productive work environment.
-      </p>
-      <a href="#assessment" class="btn-primary mb-4">Get a Free Consultation</a>
-      <p class="text-gray-600">
-        <a href="/services" class="text-primary-600 hover:text-primary-700 font-medium">
-          Or explore our complete range of workplace mental health assessment services →
-        </a>
-      </p>
+    <!-- Comparison Table -->
+    <div class="bg-white rounded-3xl shadow-xl p-8 mb-16 max-w-5xl mx-auto overflow-hidden">
+      <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Package Comparison</h3>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="border-b-2 border-gray-200">
+              <th class="text-left py-4 px-4 text-sm font-semibold text-gray-600">Features</th>
+              <th class="text-center py-4 px-4">
+                <div class="text-sm font-semibold text-gray-900">Quick Pulse</div>
+                <div class="text-xs text-gray-500">£750+</div>
+              </th>
+              <th class="text-center py-4 px-4 bg-primary-50/30 rounded-t-xl">
+                <div class="text-sm font-semibold text-primary-700">Comprehensive</div>
+                <div class="text-xs text-primary-600">£2,500+</div>
+              </th>
+              <th class="text-center py-4 px-4">
+                <div class="text-sm font-semibold text-gray-900">Quarterly</div>
+                <div class="text-xs text-gray-500">£6,000/yr</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparisonFeatures.map((item, index) => (
+              <tr class={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-gray-50/50' : ''}`}>
+                <td class="py-3 px-4 text-sm font-medium text-gray-700">{item.feature}</td>
+                <td class="text-center py-3 px-4">
+                  {typeof item.quick === 'boolean' ? (
+                    item.quick ? (
+                      <CheckCircle2 class="w-5 h-5 text-green-500 mx-auto" />
+                    ) : (
+                      <span class="text-gray-300">—</span>
+                    )
+                  ) : (
+                    <span class="text-sm text-gray-600">{item.quick}</span>
+                  )}
+                </td>
+                <td class="text-center py-3 px-4 bg-primary-50/30">
+                  {typeof item.comprehensive === 'boolean' ? (
+                    item.comprehensive ? (
+                      <CheckCircle2 class="w-5 h-5 text-green-500 mx-auto" />
+                    ) : (
+                      <span class="text-gray-300">—</span>
+                    )
+                  ) : (
+                    <span class="text-sm text-gray-600 font-medium">{item.comprehensive}</span>
+                  )}
+                </td>
+                <td class="text-center py-3 px-4">
+                  {typeof item.quarterly === 'boolean' ? (
+                    item.quarterly ? (
+                      <CheckCircle2 class="w-5 h-5 text-green-500 mx-auto" />
+                    ) : (
+                      <span class="text-gray-300">—</span>
+                    )
+                  ) : (
+                    <span class="text-sm text-gray-600">{item.quarterly}</span>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Bottom CTA Section -->
+    <div class="text-center">
+      <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-3xl p-10 max-w-4xl mx-auto">
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">
+          Which Employee Wellbeing Assessment is Right for Your Organisation?
+        </h3>
+        <p class="text-gray-700 max-w-3xl mx-auto mb-8 leading-relaxed">
+          Every workplace faces unique wellbeing challenges. Whether you're dealing with high staff turnover, 
+          declining engagement scores, or rising absence rates, our workplace wellness evaluation experts can 
+          help identify the root causes. Our employee burnout assessments and workplace stress audits provide 
+          the insights needed to create a healthier, more productive work environment.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="#assessment" class="group inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300">
+            Book Your Free Consultation
+            <ArrowRight class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </a>
+          <a href="/services" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium group">
+            <span>View all services</span>
+            <ArrowRight class="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
+        </div>
+        
+        <div class="mt-8 flex items-center justify-center gap-8 text-sm text-gray-600">
+          <div class="flex items-center gap-2">
+            <CheckCircle2 class="w-4 h-4 text-green-500" />
+            <span>Free consultation</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <CheckCircle2 class="w-4 h-4 text-green-500" />
+            <span>No obligation</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <CheckCircle2 class="w-4 h-4 text-green-500" />
+            <span>Expert advice</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<style>
+  /* Text gradient animation */
+  .text-gradient {
+    background-size: 200% auto;
+    animation: gradient-shift 3s ease infinite;
+  }
+  
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Pricing card animation */
+  .pricing-card {
+    opacity: 0;
+    animation: slideInUp 0.8s ease-out forwards;
+  }
+  
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Popular card pulse */
+  .pricing-card:nth-child(2) .ring-2 {
+    animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes pulse-ring {
+    0%, 100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+</style>
