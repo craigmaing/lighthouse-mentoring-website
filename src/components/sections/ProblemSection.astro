@@ -1,25 +1,105 @@
 ---
+import { 
+  TrendingDown, 
+  AlertTriangle, 
+  Users, 
+  Calendar,
+  Brain,
+  UserX,
+  Activity,
+  BarChart3
+} from 'lucide-astro';
+
 const stats = [
-  { value: '£45bn', label: 'Lost Every Year', description: 'Mental health costs destroy UK business profits' },
-  { value: '1 in 3', label: 'Employees Struggling', description: 'Post-pandemic mental health crisis deepens' },
-  { value: '62%', label: 'Workforce Stressed', description: 'Highest workplace stress levels ever recorded' },
-  { value: '12.8m', label: 'Days Lost Annually', description: 'Productivity vanishing to stress-related absence' }
+  { 
+    value: '£51bn', 
+    label: 'Annual Cost to Employers', 
+    description: 'Poor mental health costs UK businesses yearly',
+    icon: TrendingDown,
+    severity: 'critical',
+    source: 'Deloitte UK, 2024'
+  },
+  { 
+    value: '43%', 
+    label: 'Report Anxiety', 
+    description: 'Employees experienced anxiety in past year',
+    icon: Users,
+    severity: 'high',
+    source: 'CIPD Health & Wellbeing Report, 2025'
+  },
+  { 
+    value: '41%', 
+    label: 'Leading Absence Cause', 
+    description: 'Mental ill health drives workplace absences',
+    icon: Brain,
+    severity: 'high',
+    source: 'CIPD/Simplyhealth, 2025'
+  },
+  { 
+    value: '£21.6bn', 
+    label: 'Economic Impact', 
+    description: 'Annual cost of workplace ill health to UK',
+    icon: Calendar,
+    severity: 'critical',
+    source: 'HSE Statistics, 2024'
+  }
 ];
 
 const warningSignsData = [
-  { icon: 'calendar', title: 'Chronic Absenteeism', description: 'Sick days spiraling out of control' },
-  { icon: 'users', title: 'Staff Exodus', description: 'Top talent walking out the door' },
-  { icon: 'trending-down', title: 'Productivity Collapse', description: 'Performance metrics in free fall' },
-  { icon: 'alert-circle', title: 'Team Breakdown', description: 'Conflicts and grievances escalating' },
-  { icon: 'frown', title: 'Morale Crisis', description: 'Engagement scores hitting rock bottom' },
-  { icon: 'x-circle', title: 'Recruitment Nightmare', description: "Can't attract or retain quality hires" }
+  { 
+    icon: Activity, 
+    title: 'Rising Absences', 
+    description: 'Mental health is top absence cause',
+    impact: 'High',
+    stat: '41%'
+  },
+  { 
+    icon: UserX, 
+    title: 'Staff Turnover', 
+    description: 'Turnover costs increased 150% since 2019',
+    impact: 'Critical',
+    stat: '£22.4bn'
+  },
+  { 
+    icon: TrendingDown, 
+    title: 'Presenteeism', 
+    description: 'Working while unwell costs billions',
+    impact: 'High',
+    stat: '£24bn'
+  },
+  { 
+    icon: AlertTriangle, 
+    title: 'Work Pressure', 
+    description: 'Employees under excessive pressure',
+    impact: 'Medium',
+    stat: '21%'
+  },
+  { 
+    icon: Brain, 
+    title: 'Mental Health Impact', 
+    description: 'Work negatively affects mental health',
+    impact: 'Critical',
+    stat: '25%'
+  },
+  { 
+    icon: BarChart3, 
+    title: 'Manager Confidence', 
+    description: 'Managers lack mental health training',
+    impact: 'Medium',
+    stat: '71%'
+  }
 ];
 ---
 
-<section id="problem" class="section bg-gradient-to-br from-gray-50 via-white to-primary-50/20">
-  <div class="container">
-    <!-- Section Header -->
-    <div class="text-center mb-12">
+<section id="problem" class="section bg-gradient-to-br from-gray-50 via-white to-primary-50/20 relative overflow-hidden">
+  <!-- Animated background pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ef4444" fill-opacity="0.3"%3E%3Cpath d="M0 40L40 0H20L0 20M40 40V20L20 40"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+  </div>
+  
+  <div class="container relative z-10">
+    <!-- Section Header with fade-in animation -->
+    <div class="text-center mb-12 fade-in-up">
       <h2 class="text-gray-900 mb-4">The Hidden Cost of Poor Mental Health in the Workplace</h2>
       <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-4">
         UK businesses are facing a wellbeing crisis that's impacting bottom lines, productivity, 
@@ -33,31 +113,46 @@ const warningSignsData = [
       </p>
     </div>
 
-    <!-- Statistics Grid -->
+    <!-- Statistics Grid with Pulsing Effects -->
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
       {stats.map((stat, index) => (
-        <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-             style={`animation-delay: ${index * 0.1}s`}>
-          <div class="text-3xl font-bold text-primary-600 mb-2">{stat.value}</div>
+        <div 
+          class={`stat-card bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 reveal-on-scroll ${stat.severity === 'critical' ? 'border-l-4 border-red-500' : 'border-l-4 border-orange-400'}`}
+          style={`animation-delay: ${index * 0.15}s`}
+        >
+          <div class="flex items-start justify-between mb-3">
+            <div class={`w-12 h-12 rounded-lg flex items-center justify-center ${stat.severity === 'critical' ? 'bg-red-100' : 'bg-orange-100'}`}>
+              <stat.icon class={`w-6 h-6 ${stat.severity === 'critical' ? 'text-red-600 pulse-icon' : 'text-orange-600'}`} />
+            </div>
+            {stat.severity === 'critical' && (
+              <span class="pulse-badge bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded-full">CRITICAL</span>
+            )}
+          </div>
+          <div class={`text-3xl font-bold mb-2 ${stat.severity === 'critical' ? 'text-red-600' : 'text-orange-600'}`}>
+            {stat.value}
+          </div>
           <div class="text-gray-900 font-semibold mb-1">{stat.label}</div>
-          <div class="text-sm text-gray-600">{stat.description}</div>
+          <div class="text-sm text-gray-600 mb-2">{stat.description}</div>
+          {stat.source && (
+            <div class="text-xs text-gray-500 italic">Source: {stat.source}</div>
+          )}
         </div>
       ))}
     </div>
 
-    <!-- Warning Signs Section -->
-    <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12">
+    <!-- Warning Signs Section with Progressive Reveal -->
+    <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 reveal-on-scroll">
       <div class="grid lg:grid-cols-2 gap-12 items-start">
         <!-- Content Side -->
-        <div>
+        <div class="fade-in-left">
           <h3 class="text-2xl font-bold text-gray-900 mb-6">
             Is Your Organisation Experiencing These Warning Signs?
           </h3>
           <p class="text-gray-600 mb-4">
-            Mental health in the workplace has become the defining challenge for UK businesses. 
-            Employee burnout statistics show that workplace stress costs British companies billions annually. 
-            Poor workplace culture directly impacts employee satisfaction measurement scores, leading to a 
-            cascade of problems: reduced productivity, higher turnover, and damaged employer brand.
+            The latest 2025 CIPD Health & Wellbeing Report reveals that 43% of employees experienced anxiety 
+            in the past year, with mental ill health now the leading cause of workplace absence (41%). 
+            Deloitte UK calculates the financial impact at £51 billion annually to employers, while HSE 
+            reports the broader economic cost has reached £21.6 billion.
           </p>
           <p class="text-gray-600 mb-4">
             The pandemic fundamentally changed how we work, yet many organizations still rely on outdated 
@@ -66,9 +161,10 @@ const warningSignsData = [
             insights about team dynamics, stress patterns, and engagement drivers.
           </p>
           <p class="text-gray-600 mb-4">
-            Research shows that organizations conducting regular employee satisfaction measurement and workplace 
-            wellbeing assessments are 3x more likely to retain top talent. They identify problems earlier, 
-            implement targeted interventions, and create cultures where employees thrive.
+            However, there's hope: Deloitte's research shows that for every £1 invested in workplace mental 
+            health support, organisations achieve a £4.70 return on average. The 2025 CIPD report confirms 
+            that organisations investing in wellbeing see improved health (54%), increased engagement (39%), 
+            and reduced absence (39%).
           </p>
           <p class="text-gray-600">
             The good news? A professional workplace wellbeing audit provides the roadmap to transform these 
@@ -76,51 +172,80 @@ const warningSignsData = [
           </p>
         </div>
 
-        <!-- Warning Signs Grid -->
-        <div>
-          <div class="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl p-6 mb-6">
+        <!-- Warning Signs Grid with Severity Indicators -->
+        <div class="fade-in-right">
+          <div class="bg-gradient-to-br from-red-600 to-orange-600 rounded-xl p-6 mb-6 text-white shadow-lg">
             <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
-                <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-                </svg>
+              <div class="w-12 h-12 bg-white/20 backdrop-blur rounded-full flex items-center justify-center animate-pulse">
+                <AlertTriangle class="w-6 h-6 text-white" />
               </div>
               <div>
-                <h4 class="font-bold text-gray-900">Critical Warning Signs</h4>
-                <p class="text-sm text-gray-600">Is your organisation in crisis?</p>
+                <h4 class="font-bold text-white text-lg">Critical Warning Signs</h4>
+                <p class="text-white/90">Is your organisation in crisis?</p>
               </div>
             </div>
           </div>
 
           <div class="grid grid-cols-2 gap-4">
-            {warningSignsData.map((sign) => (
-              <div class="bg-gray-50 rounded-lg p-4 hover:bg-red-50 transition-colors group">
+            {warningSignsData.map((sign, index) => (
+              <div 
+                class="warning-card bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 hover:from-red-50 hover:to-orange-50 transition-all duration-300 group border border-gray-200 hover:border-red-300 hover:shadow-lg transform hover:scale-105"
+                style={`animation-delay: ${index * 0.1}s`}
+              >
                 <div class="flex items-start gap-3">
-                  <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-red-200 transition-colors">
-                    <svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
+                  <div class="relative">
+                    <div class={`w-10 h-10 bg-gradient-to-br ${
+                      sign.impact === 'Critical' ? 'from-red-500 to-red-600' : 
+                      sign.impact === 'High' ? 'from-orange-500 to-orange-600' : 
+                      'from-yellow-500 to-yellow-600'
+                    } rounded-full flex items-center justify-center flex-shrink-0 group-hover:animate-bounce`}>
+                      <sign.icon class="w-5 h-5 text-white" />
+                    </div>
                   </div>
                   <div>
-                    <h5 class="font-semibold text-gray-900 text-sm mb-1">{sign.title}</h5>
-                    <p class="text-xs text-gray-600">{sign.description}</p>
+                    <h5 class="font-semibold text-gray-900 text-sm mb-1 group-hover:text-red-700">{sign.title}</h5>
+                    <p class="text-xs text-gray-600 mb-1">{sign.description}</p>
+                    <div class="flex items-center justify-between">
+                      <span class={`text-xs font-semibold ${
+                        sign.impact === 'Critical' ? 'text-red-600' : 
+                        sign.impact === 'High' ? 'text-orange-600' : 
+                        'text-yellow-600'
+                      }`}>
+                        {sign.impact} Impact
+                      </span>
+                      {sign.stat && (
+                        <span class="text-xs font-bold text-gray-700">{sign.stat}</span>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div class="mt-6 p-4 bg-orange-50 border-l-4 border-orange-400 rounded-lg">
-            <div class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-orange-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              <div>
-                <p class="font-semibold text-gray-900 text-sm">Experiencing 3+ Warning Signs?</p>
-                <p class="text-sm text-gray-600 mt-1">
-                  Your organisation needs immediate intervention. Our comprehensive wellbeing audit can 
-                  identify root causes and provide actionable solutions before it's too late.
-                </p>
+          {/* Enhanced Alert Box */}
+          <div class="mt-6 relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-red-500 to-orange-500 rounded-lg blur opacity-20 animate-pulse"></div>
+            <div class="relative p-5 bg-gradient-to-br from-red-50 to-orange-50 border-2 border-red-400 rounded-lg shadow-lg">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center animate-bounce">
+                    <AlertTriangle class="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                <div>
+                  <p class="font-bold text-red-900 text-lg mb-1">Experiencing 3+ Warning Signs?</p>
+                  <p class="text-red-700">
+                    Your organisation could benefit from a professional wellbeing assessment. Our audit helps 
+                    identify specific challenges and provides evidence-based solutions to improve workplace culture.
+                  </p>
+                  <div class="mt-3">
+                    <span class="inline-flex items-center gap-2 text-red-600 font-semibold">
+                      <Activity class="w-4 h-4" />
+                      Act now before costs escalate
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -129,11 +254,135 @@ const warningSignsData = [
     </div>
 
     <!-- CTA Section -->
-    <div class="text-center mt-12">
+    <div class="text-center mt-12 fade-in-up">
       <p class="text-lg text-gray-700 mb-6">
         Don't let poor wellbeing continue to impact your organisation's success
       </p>
-      <a href="#assessment" class="btn-primary">Get Your Free Wellbeing Assessment</a>
+      <a href="#assessment" class="btn-primary inline-flex items-center gap-2 group">
+        Get Your Free Wellbeing Assessment
+        <BarChart3 class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+      </a>
     </div>
   </div>
 </section>
+
+<style>
+  /* Unique animations for ProblemSection */
+  @keyframes pulse-icon {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+
+  .pulse-icon {
+    animation: pulse-icon 2s ease-in-out infinite;
+  }
+
+  .pulse-badge {
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes severity-fill {
+    from {
+      width: 0;
+    }
+  }
+
+  .severity-bar {
+    animation: severity-fill 2s ease-out forwards;
+  }
+
+  /* Progressive reveal animations */
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+
+  .reveal-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .fade-in-left {
+    animation: fadeInLeft 0.8s ease-out forwards;
+  }
+
+  .fade-in-right {
+    animation: fadeInRight 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .stat-card {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .warning-card {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+</style>
+
+<script>
+  // Progressive reveal on scroll
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.reveal-on-scroll');
+    elements.forEach(el => observer.observe(el));
+  });
+</script>
