@@ -1,0 +1,139 @@
+---
+const stats = [
+  { value: '£45bn', label: 'Lost Every Year', description: 'Mental health costs destroy UK business profits' },
+  { value: '1 in 3', label: 'Employees Struggling', description: 'Post-pandemic mental health crisis deepens' },
+  { value: '62%', label: 'Workforce Stressed', description: 'Highest workplace stress levels ever recorded' },
+  { value: '12.8m', label: 'Days Lost Annually', description: 'Productivity vanishing to stress-related absence' }
+];
+
+const warningSignsData = [
+  { icon: 'calendar', title: 'Chronic Absenteeism', description: 'Sick days spiraling out of control' },
+  { icon: 'users', title: 'Staff Exodus', description: 'Top talent walking out the door' },
+  { icon: 'trending-down', title: 'Productivity Collapse', description: 'Performance metrics in free fall' },
+  { icon: 'alert-circle', title: 'Team Breakdown', description: 'Conflicts and grievances escalating' },
+  { icon: 'frown', title: 'Morale Crisis', description: 'Engagement scores hitting rock bottom' },
+  { icon: 'x-circle', title: 'Recruitment Nightmare', description: "Can't attract or retain quality hires" }
+];
+---
+
+<section id="problem" class="section bg-gradient-to-br from-gray-50 via-white to-primary-50/20">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-gray-900 mb-4">The Hidden Cost of Poor Mental Health in the Workplace</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-4">
+        UK businesses are facing a wellbeing crisis that's impacting bottom lines, productivity, 
+        and talent retention. Without proper workplace culture assessment and employee satisfaction measurement, 
+        organizations miss critical warning signs until it's too late.
+      </p>
+      <p class="text-gray-600 max-w-3xl mx-auto">
+        Mental health in the workplace affects every metric that matters - from absenteeism and turnover 
+        to innovation and customer satisfaction. Our workplace wellbeing assessments help identify these 
+        issues before they become costly problems.
+      </p>
+    </div>
+
+    <!-- Statistics Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      {stats.map((stat, index) => (
+        <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+             style={`animation-delay: ${index * 0.1}s`}>
+          <div class="text-3xl font-bold text-primary-600 mb-2">{stat.value}</div>
+          <div class="text-gray-900 font-semibold mb-1">{stat.label}</div>
+          <div class="text-sm text-gray-600">{stat.description}</div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Warning Signs Section -->
+    <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <!-- Content Side -->
+        <div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">
+            Is Your Organisation Experiencing These Warning Signs?
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Mental health in the workplace has become the defining challenge for UK businesses. 
+            Employee burnout statistics show that workplace stress costs British companies billions annually. 
+            Poor workplace culture directly impacts employee satisfaction measurement scores, leading to a 
+            cascade of problems: reduced productivity, higher turnover, and damaged employer brand.
+          </p>
+          <p class="text-gray-600 mb-4">
+            The pandemic fundamentally changed how we work, yet many organizations still rely on outdated 
+            assessment methods. Traditional annual surveys fail to capture the nuanced reality of modern 
+            workplace wellbeing. Without comprehensive workplace culture assessment, companies miss critical 
+            insights about team dynamics, stress patterns, and engagement drivers.
+          </p>
+          <p class="text-gray-600 mb-4">
+            Research shows that organizations conducting regular employee satisfaction measurement and workplace 
+            wellbeing assessments are 3x more likely to retain top talent. They identify problems earlier, 
+            implement targeted interventions, and create cultures where employees thrive.
+          </p>
+          <p class="text-gray-600">
+            The good news? A professional workplace wellbeing audit provides the roadmap to transform these 
+            challenges into competitive advantages, improving both employee satisfaction and business performance.
+          </p>
+        </div>
+
+        <!-- Warning Signs Grid -->
+        <div>
+          <div class="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl p-6 mb-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900">Critical Warning Signs</h4>
+                <p class="text-sm text-gray-600">Is your organisation in crisis?</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            {warningSignsData.map((sign) => (
+              <div class="bg-gray-50 rounded-lg p-4 hover:bg-red-50 transition-colors group">
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-red-200 transition-colors">
+                    <svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h5 class="font-semibold text-gray-900 text-sm mb-1">{sign.title}</h5>
+                    <p class="text-xs text-gray-600">{sign.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-6 p-4 bg-orange-50 border-l-4 border-orange-400 rounded-lg">
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-orange-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <div>
+                <p class="font-semibold text-gray-900 text-sm">Experiencing 3+ Warning Signs?</p>
+                <p class="text-sm text-gray-600 mt-1">
+                  Your organisation needs immediate intervention. Our comprehensive wellbeing audit can 
+                  identify root causes and provide actionable solutions before it's too late.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="text-center mt-12">
+      <p class="text-lg text-gray-700 mb-6">
+        Don't let poor wellbeing continue to impact your organisation's success
+      </p>
+      <a href="#assessment" class="btn-primary">Get Your Free Wellbeing Assessment</a>
+    </div>
+  </div>
+</section>

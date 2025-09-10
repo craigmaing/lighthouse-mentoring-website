@@ -1,0 +1,124 @@
+---
+const packages = [
+  {
+    name: "Quick Pulse Check",
+    price: "From £750",
+    duration: "1-2 weeks • Quick temperature check",
+    features: [
+      "Online employee survey",
+      "Key metrics analysis",
+      "Top 3 priorities identified",
+      "Summary report"
+    ],
+    cta: "Learn More",
+    popular: false
+  },
+  {
+    name: "Comprehensive Audit",
+    price: "From £2,500",
+    duration: "3-4 weeks • Full assessment",
+    features: [
+      "Complete wellbeing analysis",
+      "Leadership interviews",
+      "Detailed benchmarking",
+      "Executive presentation",
+      "Prioritized action plan"
+    ],
+    cta: "Most Popular",
+    popular: true
+  },
+  {
+    name: "Quarterly Package",
+    price: "From £6,000/year",
+    duration: "Ongoing • Continuous improvement",
+    features: [
+      "Regular assessments",
+      "Progress tracking",
+      "Trend analysis",
+      "Year-on-year comparisons"
+    ],
+    cta: "Learn More",
+    popular: false
+  }
+];
+---
+
+<section id="service-comparison" class="section bg-white">
+  <div class="container">
+    <div class="text-center mb-12">
+      <h2 class="text-gray-900 mb-4">Choose Your Workplace Wellbeing Audit Package</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-4">
+        Flexible employee wellness assessment packages designed for UK SMEs at every stage of their 
+        wellbeing journey. From quick pulse surveys to comprehensive workplace mental health audits, 
+        we tailor our approach to your needs.
+      </p>
+      <p class="text-gray-600 max-w-3xl mx-auto">
+        Our workplace wellbeing evaluation services range from rapid staff wellbeing surveys to in-depth 
+        organizational culture assessments. Each package includes data-driven insights, benchmarking against 
+        industry standards, and actionable recommendations to improve employee satisfaction, reduce burnout, 
+        and boost productivity.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {packages.map((pkg) => (
+        <div class={`relative ${pkg.popular ? 'transform scale-105' : ''}`}>
+          {pkg.popular && (
+            <div class="absolute -top-4 left-0 right-0 text-center">
+              <span class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-4 py-1 rounded-full text-sm font-semibold inline-block">
+                Most Popular Choice
+              </span>
+            </div>
+          )}
+          
+          <div class={`bg-white rounded-2xl p-8 h-full ${
+            pkg.popular 
+              ? 'shadow-2xl border-2 border-primary-200' 
+              : 'shadow-lg hover:shadow-xl border border-gray-200'
+          } transition-all duration-300`}>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{pkg.name}</h3>
+            <p class="text-3xl font-bold text-primary-600 mb-2">{pkg.price}</p>
+            <p class="text-sm text-gray-600 mb-6">{pkg.duration}</p>
+            
+            <ul class="space-y-3 mb-8">
+              {pkg.features.map((feature) => (
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-700 text-sm">{feature}</span>
+                </li>
+              ))}
+            </ul>
+            
+            <a href="/services" class={`w-full inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-colors ${
+              pkg.popular 
+                ? 'bg-gradient-to-r from-primary-600 to-primary-700 text-white hover:from-primary-700 hover:to-primary-800' 
+                : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+            }`}>
+              {pkg.cta}
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center">
+      <h3 class="text-xl font-bold text-gray-900 mb-4">
+        Which Employee Wellbeing Assessment is Right for Your Organisation?
+      </h3>
+      <p class="text-gray-600 max-w-3xl mx-auto mb-6">
+        Every workplace faces unique wellbeing challenges. Whether you're dealing with high staff turnover, 
+        declining engagement scores, or rising absence rates, our workplace wellness evaluation experts can 
+        help identify the root causes. Our employee burnout assessments and workplace stress audits provide 
+        the insights needed to create a healthier, more productive work environment.
+      </p>
+      <a href="#assessment" class="btn-primary mb-4">Get a Free Consultation</a>
+      <p class="text-gray-600">
+        <a href="/services" class="text-primary-600 hover:text-primary-700 font-medium">
+          Or explore our complete range of workplace mental health assessment services →
+        </a>
+      </p>
+    </div>
+  </div>
+</section>

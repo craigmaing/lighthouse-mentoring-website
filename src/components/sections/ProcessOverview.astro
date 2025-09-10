@@ -1,0 +1,105 @@
+---
+const steps = [
+  {
+    number: "01",
+    title: "Discovery Call",
+    description: "We discuss your specific challenges and objectives to tailor our assessment approach.",
+    icon: "phone"
+  },
+  {
+    number: "02", 
+    title: "Data Collection",
+    description: "Employee satisfaction measurement through anonymous surveys and workplace culture assessments gather insights from your entire team.",
+    icon: "clipboard"
+  },
+  {
+    number: "03",
+    title: "Expert Analysis",
+    description: "Craig personally reviews all data to identify patterns and opportunities using 17+ years of expertise.",
+    icon: "brain"
+  },
+  {
+    number: "04",
+    title: "Your Report",
+    description: "Receive detailed findings with clear insights, benchmarking, and prioritized recommendations.",
+    icon: "report"
+  }
+];
+---
+
+<section id="process-overview" class="section bg-gradient-to-br from-secondary-50/20 via-white to-primary-50/20">
+  <div class="container">
+    <div class="text-center mb-12">
+      <h2 class="text-gray-900 mb-4">How Our Workplace Wellbeing Audit Process Works</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-4">
+        Our workplace culture assessment methodology delivers actionable insights to improve mental health 
+        in the workplace within weeks, not months. From initial consultation to comprehensive reporting, 
+        every step is designed for maximum impact.
+      </p>
+      <p class="text-gray-600 max-w-3xl mx-auto">
+        Unlike basic employee satisfaction measurement tools, our workplace wellbeing assessment process 
+        combines advanced data analytics with human expertise. This proven approach helps UK businesses 
+        identify and address the root causes of workplace challenges efficiently.
+      </p>
+    </div>
+
+    <div class="relative">
+      <!-- Process Steps -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+        <!-- Connecting Line (Desktop) -->
+        <div class="hidden lg:block absolute top-12 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-200 via-primary-400 to-secondary-200" style="z-index: 0;"></div>
+        
+        {steps.map((step, index) => (
+          <div class="relative">
+            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative z-10">
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    {step.icon === 'phone' && (
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                    )}
+                    {step.icon === 'clipboard' && (
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                    )}
+                    {step.icon === 'brain' && (
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                    )}
+                    {step.icon === 'report' && (
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v1a1 1 0 001 1h4a1 1 0 001-1v-1m-5 0h5m-5 0l1-4h3l1 4m-5 0h-5m10 0h5M7 7h10l1 10H6l1-10zm1 0V6a2 2 0 012-2h4a2 2 0 012 2v1"></path>
+                    )}
+                  </svg>
+                </div>
+                <span class="text-3xl font-bold text-gray-200">{step.number}</span>
+              </div>
+              <h3 class="text-lg font-bold text-gray-900 mb-2">{step.title}</h3>
+              <p class="text-sm text-gray-600">{step.description}</p>
+            </div>
+            
+            {/* Mobile connecting line */}
+            {index < steps.length - 1 && (
+              <div class="lg:hidden flex justify-center">
+                <div class="w-0.5 h-8 bg-gradient-to-b from-primary-200 to-primary-400"></div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <!-- Timeline Note -->
+      <div class="mt-12 text-center">
+        <div class="inline-flex items-center gap-2 bg-primary-50 text-primary-700 px-4 py-2 rounded-full">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <span class="font-medium">Typical timeline: 3-4 weeks from start to finish</span>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-8">
+        <p class="text-gray-600 mb-4">Now that you understand our approach, let's find the right solution for your team size and needs.</p>
+        <a href="#service-comparison" class="btn-primary">Choose Your Package</a>
+      </div>
+    </div>
+  </div>
+</section>

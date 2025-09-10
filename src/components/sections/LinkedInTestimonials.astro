@@ -1,0 +1,95 @@
+---
+const testimonials = [
+  {
+    initials: 'JW',
+    name: 'Jeremy Wrathall',
+    title: 'Founder & Executive Chairman, Cornish Lithium PLC',
+    date: 'July 2025',
+    content: 'Having worked with you for a few years now and seen the benefits of your work with members of our team, Cornish Lithium values the work that you do with supporting our staff in difficult times. I have always found you a thoughtful and compassionate person and therefore the ideal counsellor in troubled times. I would strongly commend you to others for the service you offer.',
+    highlight: 'The ideal counsellor in troubled times'
+  },
+  {
+    initials: 'RS',
+    name: 'Richard Sharpe',
+    title: 'C-Suite Operational Board Leader',
+    date: 'February 2025',
+    content: 'I\'ve had the privilege of working with Craig through the IOD and projects, and what truly sets him apart is his extensive knowledge, continued deep empathy and openness to speak from personal experience. His expertise in mental health support is unrivalled, and I recommend his insight and services to anyone in need. In a fragmented field where experience, skills and qualifications vary, Craig stands out as a highly skilled and dedicated Wellbeing practitioner.',
+    highlight: 'His expertise in mental health support is unrivalled'
+  },
+  {
+    initials: 'CS',
+    name: 'Chris Saxby',
+    title: 'Executive & Non-Executive Leader',
+    date: 'February 2025',
+    content: 'Craig has led the IoD\'s activity in Cornwall as a most effective ambassador. He promotes the ideals and values of the Institute and has been incredibly energetic and successful in deriving closer engagement of directors across the SW peninsula. Craig\'s professional focus on wellbeing leadership has been evident to all attending - not with a salesman\'s pitch, but through his natural affinity for the subject within his daily approach to all his activities.',
+    highlight: 'Natural affinity for wellbeing leadership'
+  }
+];
+---
+
+<section id="testimonials" class="section bg-gradient-to-br from-gray-50 via-white to-gray-50">
+  <div class="container">
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full mb-4">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+        <span class="font-semibold">LinkedIn Verified Recommendations</span>
+      </div>
+      
+      <h2 class="text-gray-900 mb-4">What Industry Leaders Say About Our Workplace Wellbeing Audits</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-4">
+        Real testimonials from executives and directors who have experienced Craig's transformative approach 
+        to mental health in the workplace. These leaders have seen firsthand how our workplace culture 
+        assessment delivers measurable improvements in employee satisfaction and business performance.
+      </p>
+      <p class="text-gray-600 max-w-3xl mx-auto">
+        From FTSE companies to growing SMEs, UK businesses trust our workplace wellbeing assessment expertise 
+        to address complex organizational challenges. Our employee satisfaction measurement approach has helped 
+        hundreds of organizations create healthier, more productive work environments.
+      </p>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="grid lg:grid-cols-3 gap-8 mb-12">
+      {testimonials.map((testimonial) => (
+        <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-8">
+          <div class="flex items-start gap-4 mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white font-bold">
+              {testimonial.initials}
+            </div>
+            <div class="flex-1">
+              <h4 class="font-bold text-gray-900">{testimonial.name}</h4>
+              <p class="text-sm text-gray-600">{testimonial.title}</p>
+              <p class="text-xs text-gray-500 mt-1">{testimonial.date}</p>
+            </div>
+          </div>
+          
+          <blockquote class="relative">
+            <svg class="absolute -top-2 -left-2 w-8 h-8 text-gray-200" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+            <p class="text-gray-700 text-sm mb-4 relative z-10 pl-6">
+              {testimonial.content}
+            </p>
+            <p class="text-primary-600 font-semibold text-sm italic">
+              "{testimonial.highlight}"
+            </p>
+          </blockquote>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8">
+      <h3 class="text-xl font-bold text-gray-900 mb-4">Join Organisations That Trust Craig's Expertise</h3>
+      <p class="text-gray-600 mb-6">
+        See why industry leaders choose Lighthouse Mentoring for workplace wellbeing transformation
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/testimonials" class="btn-outline">Read All Testimonials</a>
+        <a href="#assessment" class="btn-primary">Start Your Transformation</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,143 @@
+---
+const features = [
+  {
+    icon: 'award',
+    title: 'Recognised Industry Leader',
+    badge: 'FRSPH Fellow',
+    description: 'Fellow of the Royal Society for Public Health and IoD Ambassador, bringing internationally recognised expertise to your organisation.'
+  },
+  {
+    icon: 'brain',
+    title: 'Psychology-Based Approach',
+    badge: 'Mental Health Expert',
+    description: 'Applying evidence-based psychological principles to address mental health in the workplace through comprehensive workplace culture assessment.'
+  },
+  {
+    icon: 'trending-up',
+    title: 'Proven Track Record',
+    badge: '17+ Years Experience',
+    description: '17+ years of experience transforming workplace cultures with measurable ROI and lasting positive impact.'
+  },
+  {
+    icon: 'shield',
+    title: 'ISO 45003 Compliant',
+    badge: 'ISO Certified',
+    description: 'Following international standards for mental health in the workplace, ensuring our workplace wellbeing audit meets global best practices.'
+  }
+];
+
+const differentiators = [
+  'Unique AI + Human expertise methodology',
+  'Pattern recognition across diverse sectors',
+  'Direct access to Craig Fearn\'s expertise',
+  'Personalised approach for SMEs',
+  'Evidence-based interventions',
+  'Continuous support post-assessment'
+];
+---
+
+<section id="why-choose" class="section bg-white">
+  <div class="container">
+    <div class="text-center mb-12">
+      <h2 class="text-gray-900 mb-4">Why Choose Lighthouse for Your Workplace Wellbeing Audit?</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-4">
+        When you work with Lighthouse, you're partnering with Craig Fearn, a recognised authority in 
+        mental health in the workplace with the credentials and experience to transform your organisation 
+        through comprehensive workplace culture assessment.
+      </p>
+      <p class="text-gray-600 max-w-3xl mx-auto">
+        Our workplace wellbeing assessment methodology combines decades of expertise with cutting-edge 
+        employee satisfaction measurement tools. Unlike generic consultants, we provide personalised 
+        workplace culture assessments tailored specifically for UK SMEs.
+      </p>
+    </div>
+
+    <!-- Feature Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      {features.map((feature) => (
+        <div class="text-center group">
+          <div class="relative mb-6">
+            <div class="w-20 h-20 mx-auto bg-gradient-to-br from-primary-100 to-secondary-100 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-10 h-10 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {feature.icon === 'award' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                )}
+                {feature.icon === 'brain' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                )}
+                {feature.icon === 'trending-up' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                )}
+                {feature.icon === 'shield' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                )}
+              </svg>
+            </div>
+            <span class="absolute -top-2 left-1/2 -translate-x-1/2 bg-primary-600 text-white text-xs px-2 py-1 rounded-full whitespace-nowrap">
+              {feature.badge}
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
+          <p class="text-sm text-gray-600">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Direct Access Section -->
+    <div class="grid lg:grid-cols-2 gap-12 items-center bg-gradient-to-br from-primary-50 to-secondary-50 rounded-3xl p-8 md:p-12">
+      <div>
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">Direct Access to Expertise</h3>
+        <blockquote class="bg-white rounded-xl p-6 shadow-lg mb-6">
+          <p class="text-gray-700 italic mb-4">
+            "I personally oversee every workplace wellbeing assessment and employee satisfaction measurement 
+            process, ensuring you receive insights drawn from my extensive experience addressing mental health 
+            in the workplace. Your success is my personal commitment."
+          </p>
+          <cite class="text-gray-900 font-semibold not-italic">— Craig Fearn, Founder & Lead Consultant</cite>
+        </blockquote>
+        
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm font-medium">
+            FRSPH Fellow
+          </span>
+          <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm font-medium">
+            IoD Ambassador
+          </span>
+          <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm font-medium">
+            EMCC Senior Member
+          </span>
+        </div>
+      </div>
+      
+      <div>
+        <h4 class="font-bold text-gray-900 mb-4">What Makes Us Different:</h4>
+        <ul class="space-y-3">
+          {differentiators.map((item) => (
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-gray-700">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12">
+      <p class="text-lg text-gray-700 mb-6">
+        Ready to work with a proven expert who understands your challenges?
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/about" class="btn-outline flex items-center justify-center gap-2">
+          Learn More About Craig
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+        <a href="#assessment" class="btn-primary">Get Your Free Assessment</a>
+      </div>
+    </div>
+  </div>
+</section>

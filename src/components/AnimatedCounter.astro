@@ -1,0 +1,112 @@
+---
+export interface Props {
+  value: string;
+  label: string;
+  suffix?: string;
+  prefix?: string;
+  duration?: number;
+}
+
+const { value, label, suffix = '', prefix = '', duration = 2000 } = Astro.props;
+
+// Extract numeric value for animation
+const numericValue = parseFloat(value.replace(/[^0-9.]/g, ''));
+---
+
+<div class="counter-container text-center">
+  <p class="text-4xl md:text-5xl font-bold text-gradient mb-2">
+    <span>{prefix}</span>
+    <span 
+      class="counter-value" 
+      data-target={numericValue}
+      data-duration={duration}
+      data-suffix={suffix}
+    >{value}</span>
+    <span>{suffix}</span>
+  </p>
+  <p class="text-gray-600">{label}</p>
+</div>
+
+<script>
+  // Intersection Observer to trigger counter animation when in view
+  const observerOptions = {
+    threshold: 0.5,
+    rootMargin: '0px'
+  };
+
+  const animateCounter = (element: HTMLElement) => {
+    const target = parseFloat(element.dataset.target || '0');
+    const duration = parseInt(element.dataset.duration || '2000');
+    const suffix = element.dataset.suffix || '';
+    
+    const increment = target / (duration / 16); // 60fps
+    let current = 0;
+    
+    const updateCounter = () => {
+      current += increment;
+      
+      if (current < target) {
+        // Format based on whether it's a decimal or not
+        if (target % 1 !== 0) {
+          element.textContent = current.toFixed(2);
+        } else {
+          element.textContent = Math.floor(current).toString();
+        }
+        requestAnimationFrame(updateCounter);
+      } else {
+        // Final value with original formatting
+        if (target % 1 !== 0) {
+          element.textContent = target.toFixed(2);
+        } else {
+          element.textContent = target.toString();
+        }
+      }
+    };
+    
+    updateCounter();
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target as HTMLElement;
+        if (!counter.classList.contains('animated')) {
+          counter.classList.add('animated');
+          animateCounter(counter);
+        }
+      }
+    });
+  }, observerOptions);
+
+  // Observe all counter elements - use both DOMContentLoaded and direct execution
+  const initCounters = () => {
+    const counters = document.querySelectorAll('.counter-value');
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  };
+
+  // Try to initialize immediately if DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCounters);
+  } else {
+    initCounters();
+  }
+</script>
+
+<style>
+  .counter-container {
+    animation: scale-in 0.5s ease-out;
+  }
+  
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>

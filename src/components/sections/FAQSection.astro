@@ -1,0 +1,132 @@
+---
+const faqs = [
+  {
+    question: "What is a workplace wellbeing audit?",
+    answer: "A workplace wellbeing audit is a comprehensive assessment of your organisation's mental health, employee satisfaction, and workplace culture. It combines anonymous surveys, data analytics, and expert analysis to identify issues affecting productivity, retention, and engagement. Our approach goes beyond traditional surveys to provide actionable insights that transform workplace culture."
+  },
+  {
+    question: "How long does a workplace wellbeing assessment take?",
+    answer: "The timeline depends on your chosen package. Our Quick Pulse Check takes 1-2 weeks, while our Comprehensive Audit typically completes within 3-4 weeks. This includes initial consultation, data collection from your team, analysis, and delivery of your detailed report with recommendations."
+  },
+  {
+    question: "What makes your workplace culture assessment approach unique?",
+    answer: "We combine AI-powered analytics with Craig Fearn's 17+ years of expertise in mental health and workplace wellbeing. Our approach uses pattern recognition to identify hidden correlations that traditional surveys miss. Plus, Craig personally reviews every assessment, ensuring insights are practical, contextualised, and tailored to your specific organisation."
+  },
+  {
+    question: "Is a wellbeing audit suitable for small businesses?",
+    answer: "Absolutely. Our assessments are specifically designed for UK SMEs with 10-250 employees. We understand the unique challenges smaller organisations face and provide practical, affordable solutions that deliver real ROI. Many of our most successful case studies come from businesses with fewer than 50 employees."
+  },
+  {
+    question: "What's included in the audit report?",
+    answer: "Your comprehensive report includes: current wellbeing metrics and benchmarking, identified risk areas and opportunities, prioritised recommendations with implementation roadmaps, ROI projections for suggested interventions, and ongoing support resources. For our Comprehensive Audit, you'll also receive an executive presentation to share with your leadership team."
+  },
+  {
+    question: "How much does a wellbeing audit cost?",
+    answer: "Our packages start from £750 for a Quick Pulse Check, with our most popular Comprehensive Audit from £2,500. We also offer quarterly packages for ongoing support. Every investment typically returns £4.70 for every £1 spent through improved productivity, reduced absence, and better retention."
+  },
+  {
+    question: "Can you work with remote or hybrid teams?",
+    answer: "Yes, our assessment tools are perfectly suited for remote, hybrid, and distributed teams. We use secure online surveys and video consultations to gather insights regardless of where your team is based. Many of our clients have fully remote teams across the UK and internationally."
+  },
+  {
+    question: "What happens after the audit?",
+    answer: "After delivering your report, we provide ongoing support to help implement recommendations. This includes follow-up consultations, access to resources and tools, and optional quarterly check-ins to track progress. Many clients choose our quarterly package for continuous improvement and support."
+  }
+];
+---
+
+<section id="faq" class="section bg-white">
+  <div class="container">
+    <div class="text-center mb-12">
+      <h2 class="text-gray-900 mb-4">Frequently Asked Questions</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Everything you need to know about workplace wellbeing audits and our assessment process
+      </p>
+    </div>
+
+    <div class="max-w-3xl mx-auto">
+      <div class="space-y-4">
+        {faqs.map((faq, index) => (
+          <div class="faq-item group bg-white rounded-xl border border-gray-200 hover:border-primary-200 transition-all duration-300">
+            <button 
+              class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between gap-4 cursor-pointer"
+              aria-expanded="false"
+              aria-controls={`faq-content-${index}`}
+            >
+              <div class="flex items-start gap-3 flex-1">
+                <span class="flex-shrink-0 w-8 h-8 bg-primary-100 text-primary-700 rounded-full flex items-center justify-center font-semibold text-sm">
+                  {index + 1}
+                </span>
+                <h3 class="font-semibold text-gray-900 pr-2">{faq.question}</h3>
+              </div>
+              <svg class="faq-icon w-5 h-5 text-gray-400 transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div 
+              id={`faq-content-${index}`}
+              class="faq-content hidden px-6 pb-4"
+            >
+              <p class="text-gray-600 pl-11">{faq.answer}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="text-center mt-12 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-8">
+      <h3 class="text-xl font-bold text-gray-900 mb-4">Still Have Questions?</h3>
+      <p class="text-gray-600 mb-6">
+        We're here to help. Contact Craig directly for a personalised discussion about your organisation's needs.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn-primary">Schedule a Consultation</a>
+        <a href="mailto:craig.fearn@lighthousementoring.co.uk" class="btn-outline">Email Craig Directly</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // FAQ accordion functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+      const trigger = item.querySelector('.faq-trigger');
+      const content = item.querySelector('.faq-content');
+      const icon = item.querySelector('.faq-icon');
+      
+      if (trigger && content && icon) {
+        trigger.addEventListener('click', () => {
+          const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+          
+          // Close all other items
+          faqItems.forEach(otherItem => {
+            const otherTrigger = otherItem.querySelector('.faq-trigger');
+            const otherContent = otherItem.querySelector('.faq-content');
+            const otherIcon = otherItem.querySelector('.faq-icon');
+            
+            if (otherTrigger && otherContent && otherIcon && otherItem !== item) {
+              otherTrigger.setAttribute('aria-expanded', 'false');
+              otherContent.classList.add('hidden');
+              otherIcon.classList.remove('rotate-180');
+            }
+          });
+          
+          // Toggle current item
+          if (isOpen) {
+            trigger.setAttribute('aria-expanded', 'false');
+            content.classList.add('hidden');
+            icon.classList.remove('rotate-180');
+          } else {
+            trigger.setAttribute('aria-expanded', 'true');
+            content.classList.remove('hidden');
+            icon.classList.add('rotate-180');
+          }
+        });
+      }
+    });
+  });
+</script>
